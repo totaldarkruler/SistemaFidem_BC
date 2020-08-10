@@ -1,0 +1,2462 @@
+@font-face {
+    font-family: 'seguisym'; /*a name to be used later*/
+    src: url('/tipografias/seguisym.ttf'); /*URL to font*/
+}
+
+body
+{
+    margin:0 auto;
+    padding: 0;
+    font-family: 'seguisym';
+}
+
+body *
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+a
+{
+    color: #07a2c1;
+}
+
+.campo-faltante
+{
+    position: relative;
+    display: block;
+    border: 1px solid #f00 !important;
+}
+
+#membrete-superior
+{
+    position: relative;
+    display: block;
+    margin: 30px 50px;
+    height: 10px;
+
+}
+
+#membrete-superior > div:first-of-type
+{
+    position: relative;
+    display: inline-block;
+    float: left;
+
+}
+
+#membrete-superior > div:last-of-type
+{
+    position: relative;
+    display: inline-block;
+    float: right;
+    background-color: rgb(69,101,122);
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 50px;
+    margin-top: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 500px;
+    text-align: center;
+}
+
+#membrete-superior > div:last-of-type > img
+{
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 0;
+}
+
+#cuerpo-menu {
+    position: relative;
+    display: block;
+    clear: both;
+    margin-top: 30px;
+}
+
+
+#cuerpo-menu > div > div:first-child >  h1
+{
+    position: relative;
+    display: block;
+    color: rgb(124,36,110);
+    font-size: 32px;
+}
+
+#cuerpo-menu > div > div:first-child > span
+{
+    position: relative;
+    display: block;
+    font-size: 28px;
+    color: rgb(102,102,102);
+    margin-bottom: 30px;
+}
+
+#menu
+{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+div#menu > a
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    min-height: 150px;
+    max-height: 150px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+
+    transition: border 0.5s ease;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+}
+
+div#menu > a:hover
+{
+    border: 1px solid #252525;    
+
+    transition: border 0.5s ease;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+
+}
+
+div#menu > a.calendario
+{
+    position: relative;
+    display: block;
+    background : rgb(69,101,122) url('/imagenes/principal/CALENDARIO.png') no-repeat;
+    background-position: center 20px;
+    padding: 90px 30px 10px;
+    font-size: 13px;
+}    
+
+div#menu > a.reglas-operacion
+{
+    position: relative;
+    display: block;
+    background : rgb(69,101,122) url('/imagenes/principal/REGLAS_OPERACION.png') no-repeat;
+    background-position: center 10px;
+    padding: 100px 30px 10px;
+}    
+
+div#menu > a.terminos-referencia
+{
+    position: relative;
+    display: block;
+    background : rgb(69,101,122) url('/imagenes/principal/TERMINOS_REFERENCIAS.png') no-repeat;
+    background-position: center 30px;
+    padding: 85px 30px 10px;
+    font-size: 15px;
+} 
+
+div#menu > a.cedula
+{
+    position: relative;
+    display: block;
+    background : rgb(69,101,122) url('/imagenes/principal/CEDULA.png') no-repeat;
+    background-position: center 15px;
+    padding: 110px 30px 10px;
+} 
+
+div#menu > a.ayuda
+{
+    position: relative;
+    display: block;
+    background : rgb(69,101,122) url('/imagenes/principal/AYUDA.png') no-repeat;
+    background-position: center 15px;
+    padding: 110px 30px 10px;
+} 
+
+#sesion-administrador
+{
+    position: relative;
+    display: block;
+    margin-top: 70px;
+    padding-top: 5px;
+}
+
+#sesion-administrador > div
+{
+    position: relative;
+    display: inline-block;
+    background: rgb(254,156,59) url(/imagenes/principal/ADMINISTRADOR.png) no-repeat;
+    background-position: center center;
+    width: 38px;
+    height: 37px;
+    padding: 5px;
+    text-indent: -9999px;
+
+}
+
+#sesion-administrador > a
+{
+    position: relative;
+    display: inline-block;
+    text-decoration: underline;
+    font-size: 22px;
+    color: #000;
+    margin-left: 0px;
+    text-align: bottom;
+}
+
+#sesion-administrador > a:hover
+{
+    text-decoration: none;
+}
+
+#logo-principal
+{
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.contenido-pagina
+{
+    position: relative;
+    display: block;
+    padding-top: 150px;
+    padding-left: 50px;
+}
+
+.contenido-pagina .margen-izquierdo
+{
+    position: relative;
+    display: block;
+    color: rgb(102,102,102);
+    font-size: 15px;
+    padding-left: 95px;
+}
+
+.contenido-pagina .cuadro-titulo-amarillo
+{
+    position: relative;
+    display: block;
+    background-color: rgb(255,197,40);
+    padding: 20px;
+    color: #fff;
+    width: 300px;
+    font-size: 20px;
+}
+
+.contenido-pagina .cuadro-titulo-anaranjado
+{
+    position: relative;
+    display: block;
+    background-color: rgb(249,158,51);
+    padding: 20px;
+    color: #fff;
+    width: 300px;
+    font-size: 20px;
+
+}
+
+.contenido-pagina .cuadro-titulo-verde
+{
+    position: relative;
+    display: block;
+    background-color: rgb(69,101,122);
+    padding: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.atras
+{
+    position: relative;
+    display: block;
+    font-size: 46px;
+    color: rgb(124,36,110);
+    text-decoration: none;
+    background: url(/imagenes/atras.png) no-repeat;
+    background-size: left center;
+    padding-left: 90px;
+    height: 70px;
+}
+
+table
+{
+    border-collapse: collapse;
+	width=1000px;
+}
+
+table tbody tr td,
+table tbody tr th,
+table thead tr td,
+table thead tr th
+{
+    position: relative;
+    display: table-cell;
+    border-spacing: 0;
+	
+/*    white-space: nowrap;*/
+}
+
+table tbody tr td:last-child > a
+{
+    position: relative;
+    display: inline-block;    
+}
+
+table, th, td {
+    border: 1px solid #eee;
+}
+
+table > thead > tr > th
+{
+    background-color: #eee;
+    text-align: center;
+    font-size: 13px !important;
+	width=1000px;
+}
+
+table > tbody > tr > td
+{
+    padding: 5px !important;
+    font-size: 14px;
+    background-color: #fff;
+    /*font-weight: bold;*/
+    color: #202020;
+}
+
+table > tbody > tr > td > a
+{
+    position: relative;
+    display: block;
+    font-size: 13px;
+    text-align: center;
+    color: #07a2c1;
+    font-weight: normal;
+}
+
+table tfoot tr:last-of-type td
+{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.formulario .titulo-formulario
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    color: rgb(102,102,102);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.formulario .instrucciones
+{
+    position: relative;
+    display: block;
+    color: rgb(102,102,102);
+
+}
+
+.formulario .seccion-formulario
+{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+.formulario .seccion-formulario span.titulo
+{
+    position: relative;
+    display: block;
+    color: rgb(249,158,51);
+    font-size: 22px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.formulario .seccion-formulario div.grid_12
+{
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formulario .seccion-formulario label,
+.formulario > form > label
+{
+    position: relative;
+    display: block;
+    background-color: #ccc;
+    color: #202020;
+    padding: 5px;
+    font-size: 13px;
+    height: 27px;
+}
+
+.formulario .seccion-formulario input[type=text],
+.formulario .seccion-formulario select,
+.formulario > form > input[type=text]
+{
+    position: relative;
+    display: block;
+    color: #202020;
+    padding: 5px;
+    text-transform: uppercase;
+    border: 1px solid #ccc;
+    height: 27px;
+}
+
+.boton,
+input[type=submit],
+button
+{
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 7px;
+    background-color: #ccc;
+    color: #202020;
+    cursor: pointer;
+    background:-webkit-gradient(linear, 100% 31%, 100% 75%, from(#fff), to(#ccc));
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+input[type=submit]:disabled
+{
+    background-color: #ccc !important;
+    color: #757575;
+    pointer-events: none;
+    cursor: not-allowed !important;
+}
+
+.letra-negrita
+{
+    font-weight: bold;
+}
+
+.centrado,
+.alinear-centro
+{
+    position: relative;
+    text-align: center;
+}
+
+.alinear-derecha
+{
+    position: relative;
+    display: block;
+    text-align: right;
+}
+
+.margen-superior
+{
+    position: relative;
+    display: block;
+    margin-top: 10px;
+}
+
+#formulario-terminos-referencia > .seccion-formulario:nth-of-type(1)
+{
+    margin-bottom: 0;
+}
+
+.inline
+{
+    position: relative;
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+#cedula span.inline:nth-of-type(2)
+{
+    margin: 0 10px;
+}
+
+.instrucciones-seccion-formulario
+{
+    color: rgb(109,109,109);
+    font-size: 13px;
+}
+
+#sesion
+{
+    position: fixed;
+    display: block;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+#sesion > img
+{
+    margin-bottom: 50px;
+}
+
+#informacion-sesion > div:first-of-type
+{
+    position: relative;
+    display: block;
+    background-color: rgb(254,156,59);
+    padding: 10px 70px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#informacion-sesion > div:first-of-type > img
+{
+    position: absolute;
+    display: block;
+    top: calc(100% - 1px);
+    left: 0;
+}
+
+#informacion-sesion input[type=text],
+#informacion-sesion  input[type=password],
+#informacion-sesion  label
+{
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 400px;    
+    font-weight: bold;
+}
+
+#informacion-sesion input[type=text]
+{
+    text-transform: uppercase;    
+}
+
+#informacion-sesion input[type=text],
+#informacion-sesion input[type=password]
+{
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+
+#panel-control,
+#menu-lateral-cedula
+{
+    position: relative;
+    display: block;
+    padding-top: 50px;
+    padding-left: 50px;     
+}
+
+#panel-control > div
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+#panel-control > #opcion
+{
+    width: 680px;    
+    margin-right: 50px;
+}
+
+#panel-control > #panel
+{
+    width: 300px;    
+    margin-right: 50px;
+}
+
+#panel-control > #panel > span
+{
+    position: relative;
+    display: block;
+    background-color: rgb(222,222,185);
+    padding: 5px 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#panel-control > #panel > a
+{
+    position: relative;
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    padding-left: 55px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#panel-control > #panel > a:hover
+{
+    position: relative;
+    display: block;
+    background-color: rgb(255,255,204) !important;
+
+}
+
+#panel-control > #panel > a.presentacion-proyectos
+{
+    background: url("/imagenes/panel_control/carpeta.png") no-repeat;
+    background-position: 5px center;
+}
+
+#panel-control > #panel > a.seguimiento-proyectos
+{
+    background: url("/imagenes/panel_control/carpeta_desactivada.png") no-repeat;
+    background-position: 5px center;
+}
+
+#panel-control > #panel > a.mantenimientos
+{
+    background: url("/imagenes/panel_control/mantenimiento.png") no-repeat;
+    background-position: 5px center;
+}
+
+#panel-control > #panel > a.mantenimiento-usuarios
+{
+    background: url("/imagenes/panel_control/mantenimiento_usuarios.png") no-repeat;
+    background-position: 5px center;
+}
+
+#panel-control > #panel > a.solicitudes-registro
+{
+    background: url("/imagenes/panel_control/solicitudes_registro.png") no-repeat;
+    background-position: 5px center;
+}
+
+#panel-control > #panel > a.reportes
+{
+    background: url("/imagenes/panel_control/reportes.png") no-repeat;
+    background-position: 5px center;
+}
+
+#panel-control > #panel > div
+{
+    position: relative;
+    display: none;
+}
+
+.subopcion
+{
+    position: relative;
+    display: block;
+    margin-top: 30px;
+}
+
+.subopcion .formulario form .seccion-formulario > .campo
+{
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.subopcion .formulario form .seccion-formulario > .campo > label
+{
+    position: relative;
+    display: inline-block;
+    background-color: #ccc;
+    color: #202020;
+    padding: 5px;
+    font-size: 13px;
+    height: 27px;
+    vertical-align: top;
+    margin-right: 0;
+}
+
+.subopcion .formulario form .seccion-formulario > .campo > input[type=text],
+.subopcion .formulario form .seccion-formulario > .campo > input[type=password],
+.subopcion .formulario form .seccion-formulario > .campo > select
+{
+    position: relative;
+    display: inline-block;
+    color: #202020;
+    padding: 5px;
+    text-transform: uppercase;
+    border: 1px solid #ccc;
+    height: 27px;    
+    vertical-align: top;
+    margin-left: -5px;
+}
+
+.subopcion table
+{
+    width: 100%
+}
+
+.subopcion > span:first-of-type
+{
+    position: relative;
+    display: block;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.subopcion .liga
+{
+    position: relative;
+    display: block;
+    color: #0000EE;
+    text-decoration: underline;
+    background: #fff;
+    border: 0;
+    font-size: 13px;
+}
+
+.subopcion form .botones
+{
+    position: relative;
+    display: block;
+    margin: 20px 0;
+}
+
+.subir-documento
+{
+    background: url("/imagenes/subir-documento.png") no-repeat !important;
+    background-position: 10px center;
+    background-size: 32px 32px !important;
+    padding-left: 40px !important;
+}
+
+.quitar-documento
+{
+    background: url("/imagenes/quitar-documento.png") no-repeat !important;
+    background-position: 10px center;
+    background-size: 32px 32px !important;
+    padding-left: 40px !important;
+}
+
+form > input[type=text],
+form > input[type=password]
+{
+    position: relative;
+    display: block;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 100%;
+}
+
+.columna_1 {
+    width: 60px;
+}
+
+.columna_2 {
+    width: 140px;
+}
+
+.columna_3 {
+    width: 220px;
+}
+
+.columna_4 {
+    width: 300px;
+}
+
+.columna_5 {
+    width: 380px;
+}
+
+.columna_6 {
+    width: 460px;
+}
+
+.columna_7 {
+    width: 540px;
+}
+
+.columna_8 {
+    width: 620px;
+}
+
+.columna_9 {
+    width: 700px;
+}
+
+.columna_10 {
+    width: 780px;
+}
+
+.columna_11 {
+    width: 860px;
+}
+
+.columna_12 {
+    width: 940px;
+}
+
+
+#mantenimientos
+{
+    position: relative;
+    display: block;
+}
+
+#titulos
+{
+    position: relative;
+    display: block;
+}
+
+#titulos > div
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+    vertical-align: top;
+}
+
+#titulos > div:last-of-type
+{
+    width: 680px;
+}
+
+
+#mensaje-notificador
+{
+    position: fixed;
+    display: block;
+    width: auto;
+    color: #000;
+    background-color: #eee;
+    padding: 20px;
+    top: 20px;
+    right: 20px;
+    cursor: default;
+    z-index: 2000 !important;
+
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+#mensaje-error
+{
+    position: fixed;
+    display: block;
+    width: auto;
+    color: #fff;
+    background-color: #f00;
+    padding: 20px;
+    top: 20px;
+    right: 20px;
+    cursor: default;
+    z-index: 2000 !important;
+
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+#solicitudes-proveedores
+{
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+
+#solicitudes-proveedores .seccion-formulario > div
+{
+    position: relative;
+    display: block;
+    width: 680px;
+    margin: 10px 0;
+}
+
+#solicitudes-proveedores .seccion-formulario .titulo
+{
+    position: relative;
+    display: block;
+    margin: 0;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > label,
+#solicitudes-proveedores .seccion-formulario > div > input[type=text]
+{
+    position: relative;
+    display: inline-block !important;
+    vertical-align: top;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > label
+{
+    width: 200px;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > input[type=text]
+{
+    width: 480px;    
+    margin-left: -5px;
+    background-color: #fff;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > div
+{
+    position: relative;
+    display: inline-block !important;
+    width: 337px;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > div > label,
+#solicitudes-proveedores .seccion-formulario > div > div > input[type=text]
+{
+    position: relative;
+    display: inline-block !important;
+    vertical-align: top;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > div > label
+{
+    width: 200px;
+}
+
+#solicitudes-proveedores .seccion-formulario > div > div > input[type=text]
+{
+    width: 137px;    
+    margin-left: -5px;
+    background-color: #fff;
+}
+
+
+#panel-control > #panel > div > ul
+{
+    list-style: none;
+    margin-left: 13px;
+}
+
+#panel-control > #panel > div > ul > li > a
+{
+    position: relative;
+    display: block;
+    color: #757575;
+    font-weight: normal;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+#panel-control > #panel > div > ul > li > a:hover
+{
+    font-weight: bold;
+    color: rgb(249,158,51);
+}
+
+
+
+#contenedor-cedula > #titulos > div:last-of-type
+{
+    width: 450px;
+    margin-right: 20px;
+}
+
+
+#contenedor-cedula > div > div
+{
+    position: relative;
+    display: inline-block;
+
+}
+
+#contenedor-cedula > div > nav
+{
+    position: relative;
+    display: inline-block;
+}
+
+#menu-cedula
+{
+    z-index: 3;
+}
+
+#menu-cedula > a
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #ccc;
+    color: #fff;
+    height: 94px;
+    width: 100px;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 65px;
+    border: 1px solid #fff;
+
+    transition: border 0.5s ease;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+}
+
+#menu-cedula > a:hover
+{
+    border: 1px solid #252525;    
+
+    transition: border 0.5s ease;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+}
+
+#menu-cedula > a.guardar
+{
+    background: rgb(234,140,52) url("/imagenes/guardar.png") no-repeat;
+    background-position: center 15px;
+}
+
+#menu-cedula > a.editar
+{
+    background: rgb(234,140,52) url("/imagenes/editar.png") no-repeat;
+    background-position: center 15px;
+}
+
+#menu-cedula > a.imprimir
+{
+    background: rgb(234,140,52) url("/imagenes/imprimir.png") no-repeat;
+    background-position: center 15px;
+}
+
+#menu-cedula > a.enviar
+{
+    background: rgb(234,140,52) url("/imagenes/enviar.png") no-repeat;
+    background-position: center 15px;
+}
+
+#menu-cedula > a.salir
+{
+    background: rgb(234,140,52) url("/imagenes/salir.png") no-repeat;
+    background-position: center 15px;
+}
+
+#cedula > div,
+#cedula > nav
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 50px;
+}
+
+#submenu-cedula,
+#submenu-cedula-administrador
+{
+    padding-left: 50px;
+    width: 300px;
+    margin-right: 20px;
+}
+
+#submenu-cedula > a
+{
+    position: relative;
+    display: block;
+    color: #616161;
+    background-color: #ffccff;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#submenu-cedula > a:hover
+{
+    color: #fff;
+    background-color: rgb(181,31,138);
+}
+
+#submenu-cedula-administrador > a
+{
+    position: relative;
+    display: block;
+    color: #616161;
+    background-color: rgb(255,197,40);
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#submenu-cedula-administrador > a:hover
+{
+    color: #fff;
+    background-color: rgb(249,158,51)
+}
+
+#submenu-cedula > a.solo-administrador
+{
+    color: #616161;
+    background: #ccc url("/imagenes/candado-administrador.png") no-repeat;
+    background-position: calc(100% - 5px) center;
+}
+
+#mensaje-confirmacion-registro
+{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+}
+
+#mensaje-confirmacion-registro > span
+{
+    position: relative;
+    display: block;
+    color: rgb(255,197,40) !important;
+    font-size: 24px;
+}
+
+#mensaje-confirmacion-registro > p
+{
+    position: relative;
+    display: block;
+    color: #999;
+}
+
+#mensaje-confirmacion-termino-referencia
+{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#mensaje-confirmacion-termino-referencia > span
+{
+    position: relative;
+    display: block;
+    color: #999 !important;
+    font-size: 30px;
+    margin-bottom: 32px;
+}
+
+#mensaje-confirmacion-termino-referencia > div
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+#mensaje-confirmacion-termino-referencia > div > div
+{
+    position: relative;
+    display: inline-block;
+    margin: 0 20px !important;
+}
+
+#mensaje-confirmacion-termino-referencia > div > p
+{
+    position: relative;
+    display: block;
+    color: #999;    
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#mensaje-confirmacion-termino-referencia > div > span:last-of-type,
+#mensaje-confirmacion-termino-referencia > div > div > span:last-of-type
+{
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 28px; 
+}
+
+#cedula .seccion-cedula
+{
+    position: relative;
+    display: block;
+    margin-bottom: 80px;
+}
+
+
+#cedula .seccion-cedula > span:first-of-type
+{
+    position: relative;
+    display: block;
+    font-size: 22px;
+    color: #212121;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#cedula .seccion-cedula > span.inline:last-of-type
+{
+    color: #757575;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#cedula table th
+{
+    position: relative;
+    background-color: #e9e9e9;
+    color: #202020;
+    padding: 5px;
+    font-size: 13px;
+    border: 0;
+    text-align: left;
+}
+
+#cedula table td
+{
+    padding: 0;
+}
+
+#cedula table td > input[type=text],
+#cedula table td > select,
+#cedula table td > input[type=file]
+{
+    position: relative;
+    display: block;
+    border: 0;
+    outline: none;
+    height: 27px;
+    font-size: 13px;
+    width: 100%;
+}
+
+#cedula #seccion-2 table 
+{
+    border: 0;    
+}
+
+#cedula table tbody tr
+{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#cedula table tbody th
+{
+    position: relative;
+    text-align: left; 
+}
+
+#cedula #seccion-1 table thead tr th
+{
+    text-align: center;    
+}
+
+#cedula #seccion-2 table tbody th,
+#cedula #seccion-1-5 table tbody th,
+#cedula #seccion-3 table tbody th,
+#cedula #seccion-4 table tbody th
+{
+    width: 150px;
+}
+
+#cedula #seccion-2 table tbody td,
+#cedula #seccion-1-5 table tbody td,
+#cedula #seccion-3 table tbody td
+{
+    position: relative;
+    width: 750px;
+    text-align: left;
+}
+
+#cedula #seccion-4 table tbody td
+{
+    width: 300px !important;
+}
+
+#cedula #seccion-7 table,
+#cedula #seccion-8 table,
+#cedula #seccion-9 table,
+#cedula #seccion-10 table,
+#cedula #seccion-11 table,
+#cedula #seccion-12 table
+{
+    width: 900px;
+}
+
+
+#cedula #seccion-7 table tbody td > textarea,
+#cedula #seccion-8 table tbody td > textarea,
+#cedula #seccion-9 table tbody td > textarea
+{
+    position: relative;
+    display: block;
+    width: 900px;
+    height: 100px;
+    border: 0;
+    outline: none;
+    resize: none;
+}
+
+#cedula #seccion-10 subtitulo *
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cedula #seccion-10 > div > div:nth-of-type(2) table thead tr:nth-of-type(2) th > input[type=text],
+#cedula #seccion-10 > div > div:nth-of-type(2) table thead tr:nth-of-type(2) th
+
+{
+    max-width: 40px !important;
+    text-align: center;
+}
+
+
+#cedula .subtitulo
+{
+    position: relative;
+    color: #333 !important;
+    font-size: 17px !important;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+#cedula #seccion-10 th,
+#cedula #seccion-10 td,
+#cedula #seccion-12 th,
+#cedula #seccion-12 td
+{
+    position: relative;
+    text-align: center;
+}
+
+#cedula div.subtitulo
+{
+    position: relative;
+    display: block;
+    margin-top: 30px !important;
+}
+
+#cedula #seccion-11 > div > div:nth-of-type(2)
+{
+    position: relative;
+    display: block;
+    margin: 10px 0 30px;
+}
+
+#cedula #seccion-12 > div:nth-of-type(2)
+{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+td.centrado,
+th.centrado
+{
+    position: relative;
+    text-align: center;
+}
+
+td.alinear-izquierda,
+th.alinear-izquierda
+{
+    position: relative;
+    text-align: left !important;
+    vertical-align: top;
+}
+th.alinear-centro
+{
+    position: relative;
+    text-align: left !important;
+    vertical-align: top;
+}
+
+td.alinear-derecha,
+th.alinear-derecha
+{
+    position: relative;
+    text-align: right !important;
+    vertical-align: top;
+}
+
+#informacion-proyecto
+{
+    position: relative;
+    display: block;
+    width: 350px;
+}
+
+#informacion-proyecto form label
+{
+    position: relative;
+    display: block;
+}
+
+#informacion-proyecto form input[type=text],
+#informacion-proyecto form input[type=password]
+{
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#informacion-proyecto form > div.alinear-derecha
+{
+    margin: 20px 0;
+
+}
+
+#informacion-proyecto form > div > input[type=submit]
+{
+    margin-right: 0;    
+}
+
+#transparencia
+{
+    position: fixed;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    text-indent: -9999px;
+}
+
+#transparencia-bloqueo
+{
+    position: fixed;
+    display: none;
+    z-index: 3;
+    display: block;
+    background-color: rgba(255,255,255,0);
+    top: 0;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    text-indent: -9999px;
+}
+
+.dialogo
+{
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    padding: 20px;
+    background-color: #fff;
+
+    box-shadow: 0 0 10px #999;
+
+    transform: translate(-50%, -50%);
+
+}
+
+.dialogo .cerrar-dialogo
+{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-weight: bold;
+    color: #999;
+    text-decoration: none;
+    font-weight: 20px;
+}
+
+.dialogo .cerrar-dialogo:hover
+{
+    color: #212121;
+}
+
+#dialogo-enviar-cedula,
+#dialogo-acuse-recibo
+{
+    width: 650px;    
+}
+
+#dialogo-enviar-cedula > div > button
+{
+    width: 50px;
+    font-weight: bold;
+}
+
+#dialogo-enviar-cedula .cuadro-titulo-verde,
+#dialogo-acuse-recibo .cuadro-titulo-verde
+{
+    position: relative;
+    display: block;
+    background-color: rgb(69,101,122);
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    width: 50%;
+}
+
+#dialogo-enviar-cedula img,
+#dialogo-acuse-recibo img
+{
+    position: relative;
+    display: block;
+    margin-top: -1px;
+}
+
+#dialogo-enviar-cedula > div,
+#dialogo-acuse-recibo > div
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#dialogo-enviar-cedula > div > span,
+#dialogo-acuse-recibo > div:nth-of-type(2) > span:first-of-type
+{
+    position: relative;
+    display: block;
+    font-weight: normal;
+    font-size: 26px;
+}
+
+#dialogo-acuse-recibo > div:nth-of-type(3),
+#dialogo-acuse-recibo > div:nth-of-type(4),
+#dialogo-acuse-recibo > div:nth-of-type(5)
+{
+    margin-bottom: 20px;
+}
+
+#dialogo-acuse-recibo > div:nth-of-type(5) > div
+{
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+#dialogo-acuse-recibo > div > span,
+#dialogo-acuse-recibo > div > div > span
+{
+    font-weight: bold;
+}
+
+#dialogo-acuse-recibo > div > span:nth-of-type(2),
+#dialogo-acuse-recibo > div:nth-of-type(5) > div > span:nth-of-type(2)
+{
+    position: relative;
+    display: block;
+    font-size: 17px;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type
+{
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(1)
+{
+    width: 100px;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(2)
+{
+    width: 300px;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(3)
+{
+    width: 200px;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div,
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(3) > div
+{
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: top;
+    max-width: 200px;
+    width: 200px;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div > div > span,
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(3) > span
+{
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: #eee;
+    text-align: center;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(3) > div > input[type=text]
+{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+#presentacion-proyectos div.subopcion div:first-of-type > div:nth-of-type(3) > span:nth-of-type(1),
+#presentacion-proyectos div.subopcion  div:first-of-type > div:nth-of-type(2) > span:nth-of-type(1)
+{
+    position: relative;
+    display: block;
+    background-color: #fff;
+    text-align: center;
+}
+
+#presentacion-proyectos div.subopcion  div:first-of-type > div > div > select
+{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+#presentacion-proyectos form > div:first-child > div:first-child
+{
+    text-align: left;
+    padding-top: 15px;
+    float: left;
+}
+
+#presentacion-proyectos form > div:first-child > div > input[type=submit],
+#presentacion-proyectos form > div:first-child > div > a.actualizar
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;  
+}
+
+#presentacion-proyectos form input[type="submit"].buscar
+{
+    background: rgb(249,158,51) url("/imagenes/buscar.png") no-repeat;
+    background-position: center 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+#presentacion-proyectos form a.actualizar
+{
+    background: rgb(249,158,51) url("/imagenes/actualizar.png") no-repeat;
+    background-position: center 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    text-indent: -9999px;
+}
+
+#cedula #opcion #informacion-folio-cedula
+{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    clear: both;
+}
+
+#cedula #opcion #informacion-folio-cedula span
+{
+    position: relative;
+    display: block;
+}
+
+#cedula #opcion #informacion-folio-cedula span:last-of-type
+{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#titulo-administrador
+{
+    width: 300px !important;
+}
+
+#cedula #opciones-extras
+{
+    margin-bottom: 30px;
+}
+
+#cedula #opciones-extras > #opciones
+{
+    position: relative;
+    display: block;
+    float: left;
+}
+
+#cedula #opciones-extras > #opciones > a.guardar
+{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(249,158,51);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#cedula #opciones-extras > #opciones > a.imprimir
+{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(249,158,51);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#cedula #opcion
+{
+    width: 800px !important;
+}
+
+#cedula #opciones-extras > #acuse-recibo,
+#cedula #opcion #acuse-recibo
+{
+    position: relative;
+    display: block;
+    float: right;
+    background-color: rgb(249,158,51);
+    padding: 5px 50px;
+    text-align: center;
+}
+
+#cedula #opciones-extras > #acuse-recibo > span:nth-of-type(1),
+#cedula #opcion #acuse-recibo > span:nth-of-type(1)
+{
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#cedula #opciones-extras > #acuse-recibo > span:nth-of-type(2),
+#cedula #opcion #acuse-recibo > span:nth-of-type(2)
+{
+    position: relative;
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+
+#cedula #opciones-extras > #acuse-recibo > span:nth-of-type(3),
+#cedula #opcion #acuse-recibo > span:nth-of-type(3)
+{
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+#cedula #opcion #documentos-anexos > div:nth-of-type(1)
+{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+#cedula #opcion #documentos-anexos > div
+{
+    position: relative;
+    display: inline-block;
+
+}
+
+#cedula #opcion #documentos-anexos > div > span
+{
+    position: relative;
+    display: block;
+    text-align: left;
+    color: #999;
+    font-size: 15px;
+}
+
+#cedula #opcion #documentos-anexos > div:nth-of-type(1)
+{
+    margin-right: 100px;
+}
+
+#cedula #opcion #documentos-anexos > div:nth-of-type(3)
+{
+    position: relative;
+    display: block;
+    clear: both;
+    margin: 30px 0;
+}
+
+div#documentos-anexos div table
+{
+    background-color: #f00 !important;
+}
+
+#dialogo-nueva-actividad > form > div
+{
+    position: relative;
+    display: block;
+    width: 340px;
+    margin: 20px 0;
+}
+
+#dialogo-nueva-actividad > form > div > input[type=checkbox]
+{
+    position: relative;
+    display: inline-block;
+    margin: 10px 15px;
+}
+
+
+#reporte {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    -webkit-print-color-adjust: exact; 
+    -webkit-print-border-adjust: exact;
+}
+
+#reporte .hoja {
+    position: relative;
+    display: block;
+    page-break-after: always;
+    background-color: #fff;
+    /* border: 1px solid #000;*/
+    border-radius: 1px;
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-bottom: 3px solid #999;
+    padding-bottom: 50px;
+}
+
+#reporte .hoja .seccion
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#reporte .hoja .seccion > span.numero
+{
+    font-weight: bold;
+    color: #e78432;
+}
+
+#reporte .hoja .seccion > span.titulo
+{
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#reporte table
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 10px;
+    border: 1px solid #000;
+    border-top: 3px solid #000;
+
+}
+
+
+#reporte table th
+{
+    position: relative;
+    font-size: 13px;
+    padding: 5px 20px;
+    background-color: #eaf1dd;
+    border: 1px solid #000;
+}
+
+#reporte table tbody tr td
+{
+    position: relative;
+    border: 1px solid #000;
+    font-weight: normal;
+    text-transform: uppercase;
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+#tabla-2-1 tbody > tr > th,
+#tabla-4-1 tbody > tr > th
+{
+    position: relative;
+    width: 170px !important;
+    padding: 5px 20px;
+}
+
+#tabla-2-1 > tbody > tr > td:last-of-type
+{
+    border: 0 !important;
+}
+
+#tabla3-1 tbody tr:nth-of-type(2) th:first-of-type,
+#tabla3-1 tbody tr:nth-of-type(3) th:first-of-type,
+#tabla3-1 tbody tr:nth-of-type(4) th:first-of-type
+{
+    border: 0;
+}
+
+#reporte #tabla6-1 tbody tr:nth-of-type(2) > td
+{
+    position: relative;
+    height: 120px;
+}
+
+#reporte #tabla6-1 tbody tr:last-of-type > td
+{
+    position: relative; 
+    text-align: center !important;
+    font-weight: bolder;
+    padding-top: 20px !important;
+    padding-bottom: 10px !important;
+}
+
+#tabla13-1 tbody tr th p
+{
+    position: relative;
+    display: block;
+    text-align: left;
+    text-transform: justify;
+}
+
+#firmas
+{
+    position: relative;
+    display: block;
+    margin-top: 80px;
+    overflow: auto;
+    padding-top: 10px;
+}
+
+#firmas > div:nth-child(2n),
+#firmas > div:nth-child(2n + 1)
+{
+    margin-bottom: 80px;
+    text-align: center;
+    width: 460px;
+}
+
+#firmas > div:nth-child(2n)
+{
+    float: left;
+}
+
+#firmas > div:nth-child(2n + 1)
+{
+    float: right;
+}
+
+#firmas > div > span
+{
+    font-weight: bolder;
+    text-transform: uppercase;
+    border-top: 2px solid #000;
+}
+
+#firmas > div:last-of-type
+{
+    position: relative;
+    display: block;
+    clear: both;
+    width: 940px;
+
+}
+
+#fecha-reporte
+{
+    position: relative;
+    display: block;
+    width: 940px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#encabezado-hoja
+{
+    position: relative;
+    display: block;
+    border-bottom: 2px solid #000;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+#encabezado-hoja > div
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#encabezado-hoja > div:nth-of-type(1)
+{
+    text-align: left;   
+    width: 160px;
+}
+
+#encabezado-hoja > div:nth-of-type(3)
+{
+    text-align: right;
+    width: 160px;
+}
+
+#encabezado-hoja > div:nth-of-type(2)
+{
+    position: relative;
+    text-align: center;
+    width: 650px;
+}
+
+#encabezado-hoja > div:nth-of-type(2) > span,
+#encabezado-hoja > div:nth-of-type(3) > span
+{
+    position: relative;
+    display: block;
+}
+
+#encabezado-hoja > div:nth-of-type(3) > span
+{
+    position: relative;
+    display: block;
+    font-weight: bold;
+}
+
+#encabezado-hoja > div:nth-of-type(2) > span
+{
+    text-transform: uppercase;    
+}
+
+#encabezado-hoja > div:nth-of-type(2) > span:first-child
+{
+    font-weight: bolder;
+}
+
+#pie-hoja
+{
+    position: relative;
+    display: block;
+}
+
+#pie-hoja > div
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#pie-hoja > div > span
+{
+    font-size: 14px;
+}
+
+
+#pie-hoja > div:nth-of-type(1)
+{
+    text-align: left;   
+    width: 150px;
+    text-align: center;
+}
+
+#pie-hoja > div:nth-of-type(3)
+{
+    text-align: left;
+    width: 150px;
+    height: 80px;
+    overflow: auto;
+    padding-left: 15px;
+    padding-top: 20px;
+
+    background: url("/imagenes/pie.jpg") no-repeat;
+    background-position: right center;
+}
+
+#pie-hoja > div:nth-of-type(2)
+{
+    position: relative;
+    text-align: center;
+    width: 680px;
+}
+
+#pie-hoja > div:nth-of-type(2) > span
+{
+    position: relative;
+    display: block;
+}
+
+#pie-hoja > div:nth-of-type(2) > span:nth-of-type(1)
+{
+    font-weight: bolder;   
+}
+
+@page {
+    size: A4;
+}
+
+#requerimientos-sistema
+{
+    position: relative;
+    display: block;
+    margin-top: 50px;
+}
+
+#requerimientos-sistema > a
+{
+    position: relative;
+    display: block;
+    background: url('/imagenes/requerimientos.png') no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+    padding-left: 40px;
+    height: 24px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+/*
+#requerimientos-sistema > a:last-of-type
+{
+    background: none !important;
+}
+*/
+
+#btnEnviarFormularioTerminosReferencia:disabled
+{
+    pointer-events: none;
+    background: #ccc !important;
+    color: #444;
+}
+
+.texto-apartado
+{
+    position: relative;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.texto-apartado > span:first-of-type
+{
+    color: rgb(249,158,51);
+
+}
+
+.texto-apartado > span:last-of-type
+{
+text-shadow: 0 0 10px #ccc;
+}
+
+.texto-apartado > span
+{
+    font-weight: bold;
+}
+
+#evaluacion #frmEvaluacionCantidadEvaluadores,
+#evaluacion #frmEvaluacionAgregarEvaluador
+{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+
+#evaluacion form label
+{
+    position: relative;
+    display: block;
+}
+
+#evaluacion form select
+{
+    outline: none;
+    height: 27px;
+    font-size: 13px;
+    width: 250px; 
+}
+
+#evaluacion form input[type="submit"]
+{
+    width: 150px !important;
+}
+
+#evaluacion div.resultado
+{
+    position: relative;
+    display: block;
+    margin: 50px 0;
+    background-color: #eee;
+    padding: 10px 50px;
+}
+
+#evaluacion div.resultado span
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    
+}
+
+#evaluacion div.resultado span:last-of-type
+{
+    margin-left: 30px;
+}
+
+
+#proyectos-por-evaluar > div
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#proyectos-por-evaluar > div > span
+{
+    position: relative;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#proyectos-por-evaluar > div > span:last-of-type
+{
+    position: relative;
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+table#registros-por-evaluar tbody tr td a
+{
+    position: relative;
+    display: inline-block !important;
+}
+
+#contenedor-evaluacion #titulos
+{
+    position: relative;
+    display: inline-block;
+     vertical-align: middle;
+}
+
+#contenedor-evaluacion #informacion-evaluacion
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+ width: calc(100% - 400px);
+    
+}
+
+#contenedor-evaluacion #informacion-evaluacion > p
+{
+    position: relative;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    width: 500px;
+    text-align: right;
+}
+
+#contenedor-evaluacion #preguntas,
+#contenedor-evaluacion #finalizar-evaluacion
+{
+    position: relative;
+    display: block;
+    padding: 0 30px 10px 350px;
+}
+
+a.guardar
+{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(249,158,51);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#contenedor-evaluacion #preguntas div.contenido-pregunta
+{
+    position: relative;
+    display: block;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ccc;
+}
+
+#contenedor-evaluacion #preguntas div.contenido-pregunta p.titulo-pregunta
+{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+#contenedor-evaluacion #preguntas div.contenido-pregunta > div
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+#contenedor-evaluacion #preguntas div.calculada input[type=radio]
+{
+     pointer-events: none !important;
+    cursor: not-allowed !important;
+}
+
+#contenedor-evaluacion #finalizar-evaluacion
+{
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+#contenedor-evaluacion #finalizar-evaluacion form label
+{
+    float: left;    
+}
+
+#contenedor-evaluacion #finalizar-evaluacion textarea
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0;
+    resize: none;
+}
+
+div.deshabilitar > a
+{
+    pointer-events: none !important;
+    
+}
+
+a.disabled
+{
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    color: #ccc !important;
+    text-decoration: none !important;
+}
+
+div.capa-bloqueo
+{
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 50px;
+    right: 0;
+    bottom: 0;
+    z-index: 45678;
+    margin-left: 350px;
+    height: 100%;
+    background-color: transparent;
+}
+
+#frmEvaluadorCambiarContrasena div.alinear-derecha input[type=submit]
+{
+    margin-right: 0 !important;
+}
+
+
+#tabla-evaluacion-valores tbody tr td:first-of-type,
+#tabla-evaluacion-valores tfoot tr td:first-of-type
+{
+    background-color: #004c00;
+    color: #fff;
+}
+
+#tabla-evaluacion-valores tbody tr td:last-of-type,
+#tabla-evaluacion-valores tfoot tr td:last-of-type
+{
+    background-color: #eaf1dd;
+    text-align: center;
+}
+
+#tabla-evaluacion-valores tbody
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#tabla-evaluacion-comentarios thead tr th
+{
+    background-color: #004c00;
+    color: #fff;
+}
+
+#proyecto-comentarios-general
+{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#proyecto-comentarios-general form textarea
+{
+    position: relative;
+    display: block;
+    width:100%;
+    resize: none;
+    height: 170px;
+}
+
+#proyecto-comentarios-general form div.alinear-derecha input[type=submit]
+{
+    margin-right: 0;
+}
