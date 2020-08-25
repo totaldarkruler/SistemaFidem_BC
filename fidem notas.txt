@@ -1,0 +1,72 @@
+----------------------------------------
+HOST
+-----------------------------------------
+
+https://my.webfaction.com/
+
+USUARIO:	cdem
+CONTRASEÑA:	azul123123
+
+
+https://www.xpress.com.mx/
+USUARIO: rene.acuna@cdem.org.mx
+NUEVA CONTRASEÑA: azul321321!
+
+CONTRASEÑA: azul123123
+-----------------------------------------
+-----------------------------------------
+
+-----------------------------------------
+CORREO
+-----------------------------------------
+
+CORREO: notificaciones@sistemafidem.org.mx
+CONTRASEÑA: Azul123123!
+
+
+Username:	sistema@sistemafidem.org.mx
+Password:	Sistema123!
+Pop3 Server:	sistemafidem.org.mx
+Smtp Server:	sistemafidem.org.mx
+
+siste101@sistemafidem.org.mx
+USUARIO : siste101
+CONTRASEÑA: 1bETs9z89e
+-----------------------------------------
+-----------------------------------------
+BASE DE DATOS
+-----------------------------------------
+BASE DE DATOS:	siste101_fidem
+USUARIO:	siste101_fidem
+CONTRASEÑA:	fidem1
+
+-----------------------------------------
+
+-----------------------------------------
+FTP
+-----------------------------------------
+servidor: sistemafidem.org.mx
+puerto: 21
+protocolo: ftp
+modo de acceso: normal
+usuario: fidem
+contraseña: fidem1
+
+-----------------------------------------
+servidor:	cdem.webfactional.com
+puerto:		21
+protocolo:	FTP
+modo de acceso:	Normal
+usuario:	sistemafidem
+CONTRASEÑA:	sistemafidem1
+
+
+cabmios sistema@sistemafidem
+punto 5 : fecha sea mes /año listo formato se cambio en archivos php a M/Y
+cambiar logos fidem  / se tiene que cambiar el recurso en /imagenes
+punto 11 : anexos justificacion 6 lineas  /se tuvo que incrementar el campo en la bd justifica_otro_estudio a varchar(3000)
+
+pdf muy pesado pendiente no se puede reproducir
+imprime hojas ne blanco esto es por los saltos de lineas revisar si con las clases page-break after o before se puede resolver
+
+para resolver issue de headers sent en hostgator se necesita agregar al phpini del server la sig config output_buffering = on

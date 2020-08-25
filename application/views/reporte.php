@@ -872,7 +872,7 @@
                                        word-wrap: break-word;
                                        white-space: pre-wrap;
                                        white-space: -moz-pre-wrap;
-                                       white-space: -pre-wrap; text-align: left; text-tranform: justify;">
+                                       white-space: -pre-wrap; text-align: left; text-transform: justify;">
                                 LOS INTEGRANTES DEL COMITE TECNICO DEL FIDEICOMISO EMPRESARIAL DEL ESTADO DE BAJA CALIFORNIA CON FUNDAMENTO EN SU CONTRATO DE CREACION, EN LAS REGLAS DE OPERACION Y DE MAS NORMATIVIDAD ESTATAL APLICABLE A ESTE FIDEICOMISO TIENE A BIEN AUTORIZAR EL PROYECTO '<?php echo $proyecto->proyecto; ?>' POR LA CANTIDAD DE <?php echo '$' . $proyecto->apoyo_fidem_solicitado . ' (' . $proyecto->cantidad_letra . ' 00/100 M.N.)'?> Y ORDENA EL SECRETARIO EJECUTIVO DE ESTE COMITE PARA QUE SE INSTRUYA AL FIDUCIARIO A CANALIZAR LOS RECUROS DE ACUERDO A LA SOLICITUD QUE EL ORGANISMO INTERMEDIO SOLICITE.
 
                             </th>
