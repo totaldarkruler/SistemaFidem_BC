@@ -331,13 +331,13 @@
                             <?php if ($proyecto->fecha_inicio  == "" || $proyecto->fecha_inicio == "1969-12-31 00:00:00") : ?>
                             <td><input type="text" value="" class="alinear-centro" readonly="readonly"></td>
                             <?php else : ?>
-                            <td class="alinear-centro"><?php echo @date("d/m/Y", strtotime($proyecto->fecha_inicio)); ?></td>
+                            <td class="alinear-centro"><?php echo @date("m/Y", strtotime($proyecto->fecha_inicio)); ?></td>
                             <?php endif; ?>
 
                             <?php if ($proyecto->fecha_fin == "" || $proyecto->fecha_fin == "1969-12-31 00:00:00") : ?>
                             <td><input type="text" value="" class="alinear-centro" readonly="readonly"></td>
                             <?php else : ?>
-                            <td class="alinear-centro"><?php echo @date("d/m/Y", strtotime($proyecto->fecha_fin)); ?></td>
+                            <td class="alinear-centro"><?php echo @date("m/Y", strtotime($proyecto->fecha_fin)); ?></td>
                             <?php endif; ?>
 
 

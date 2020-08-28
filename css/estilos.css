@@ -1856,7 +1856,7 @@ div#documentos-anexos div table
 #reporte .hoja {
     position: relative;
     display: block;
-    /* page-break-after: always; */
+    page-break-after: always;
     background-color: #fff;
     /* border: 1px solid #000;*/
     border-radius: 1px;
