@@ -218,7 +218,7 @@
                             <?php if ($proyecto->fecha_fin == "" || $proyecto->fecha_fin == "1969-12-31 00:00:00") : ?>
                             <td></td>
                             <?php else : ?>
-                            <td class="alinear-centro"><?php echo @date("d/m/Y", strtotime($proyecto->fecha_fin)); ?></td>
+                            <td class="alinear-centro"><?php echo @date("m/Y", strtotime($proyecto->fecha_fin)); ?></td>
                             <?php endif; ?>
                             <td class="alinear-centro"><?php echo $proyecto->dias_letra; ?></td>                            
                         </tr>

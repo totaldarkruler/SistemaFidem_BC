@@ -1,4 +1,121 @@
- /* @media print { 
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
+body {
+  margin: 0 auto;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.header, .t-head, .footer, .t-foot {
+  height: 35px; 
+  max-width: 800px; 
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  
+  
+}
+
+.footer h5, .footer h3{
+  
+    margin: 5px;
+    color: #5555;
+}
+
+.t-head  h5, .t-head  h3{
+  
+  margin: 5px;
+  color: #5555;
+}
+
+.t-foot  h5, .t-foot  h3{
+  
+  margin: 5px;
+  color: #5555;
+}
+.header h5, .header h3{
+  
+  margin: 5px;
+  color: #5555;
+}
+
+.footer, .t-foot {height: 25px;}
+.t-head, .t-foot {background: #fff;}
+.pr {
+  position: fixed; right: 0; bottom: 10px;
+  color: #aaa; letter-spacing: 1px;
+  font-weight: normal; text-decoration: none;
+}
+.header{
+  position: fixed; top: 0;
+  border-bottom: 1px solid #ddd;
+  }
+ .header i.fa {padding-left: 5px;}
+.header button{
+  position: fixed; left:0; top: 50%;
+  background: rgba(241, 194, 89, 0.7);
+  padding: 10px 10px 10px 5px;
+  border: 0; border-radius: 0 25px 25px 0;
+  cursor: pointer; margin-left: -35px;
+  transition: all .5s;
+}
+ .header button:hover{
+  background: rgba(0, 0, 0, 0.7);
+  color: #f1c259;
+  margin-left: 0;
+ }
+.footer {
+  position: fixed; bottom: 0;
+  border-top: 1px solid #ddd;
+ 
+}
+
+.footer h3{
+  color: #aaaa;
+}
+.content {
+  background: #f5ebeb;
+  padding: 10px;
+ 
+}
+
+.content .page{
+    page-break-after: always;
+    
+}
+.content .page > img{
+  display: block;
+      height: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px dashed #ccc;
+}
+.content .page > pre{
+  background: #f5f5f5;
+  border-left: 5px solid #ccc;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+.content .page > h5{
+    display: inline-block;
+    color: #000;
+    padding: 5px 10px;
+    border-bottom: 2px solid #aaa;
+    border-radius: 20px;
+    letter-spacing: 2px;
+}
+
+@page {margin: 20mm}
+@media print {
+  body {border: 0;}
+  thead {display: table-header-group;} 
+  tfoot {display: table-footer-group;}
+  button {display: none;}
+  body {margin: 0;}
+}
+/* @media print { 
     *{transition:none!important;}
 
     thead {display: table-header-group !important; } 

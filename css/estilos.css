@@ -1872,6 +1872,9 @@ div#documentos-anexos div table
     position: relative;
     display: block;
     margin-bottom: 20px;
+    /* jacp */
+    /* page-break-inside: avoid; */
+
 }
 
 #reporte .hoja .seccion > span.numero
