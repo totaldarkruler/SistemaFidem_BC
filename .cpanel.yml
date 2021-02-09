@@ -9,3 +9,4 @@ deployment:
     - /bin/cp -R application $DEPLOYPATH
     - /bin/cp -R index.php $DEPLOYPATH
     - /bin/cp -R composer.json $DEPLOYPATH
+    - /bin/cp -R favicon.ico $DEPLOYPATH
