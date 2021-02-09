@@ -17,22 +17,27 @@
 </div>
 
 <div id="cedula">   
+<form id="forma-desbloquear-puntos" action="/cedula_administrador/desbloquear" method="post">
+    <input type="hidden" name="proyecto_id" value="<?php echo $proyecto->id; ?>">
+    <input type="hidden" name="id" value="<?php echo $proyecto->id; ?>">
+    <input type="hidden" name="folio_proyecto" value="<?php echo $proyecto->folio; ?>">
     <nav id="submenu-cedula-administrador">
-        <a href="#seccion-0">DOCUMENTOS ADJUNTOS</a>
+        <a href="#seccion-0">DOCUMENTOS ADJUNTOS</a> 
         <a href="#seccion-1">I.- REGISTRO DEL PROYECTO</a>
         <a href="#seccion-2">II.- ORGANISMO EJECUTOR DEL PROYECTO</a>
-        <a href="#seccion-3">III.- NOMBRE DEL PROYECTO</a>
-        <a href="#seccion-4">IV.- APOYO SOLICITADO FIDEM</a>
-        <a href="#seccion-5">V.- TIEMPO ESTIMADO</a>
+       <div class="contenedor-submenu-opcion"> <a href="#seccion-3">III.- NOMBRE DEL PROYECTO</a> <div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_3"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+       <div class="contenedor-submenu-opcion"><a href="#seccion-4">IV.- APOYO SOLICITADO FIDEM</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_4"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-5">V.- TIEMPO ESTIMADO</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_5"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
         <a href="#seccion-6">VI.- VISTO BUENO</a>
-        <a href="#seccion-7">VII.- OBJETIVOS DEL PROYECTO</a>
-        <a href="#seccion-8">VIII.- ANTECEDENTES</a>
-        <a href="#seccion-9">IX.- ALCANCE, IMPACTO Y BENF.</a>
-        <a href="#seccion-10">X.- ACTIVIDADES, INFORMES...</a>
-        <a href="#seccion-11">XI.- ANEXOS</a>
-        <a href="#seccion-12">XII.- INTEGRACIÓN DEL VALOR</a>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-7">VII.- OBJETIVOS DEL PROYECTO</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_5"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-8">VIII.- ANTECEDENTES</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_8"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-9">IX.- ALCANCE, IMPACTO Y BENF.</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_9"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-10">X.- ACTIVIDADES, INFORMES...</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_10"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-11">XI.- ANEXOS</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_11"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-12">XII.- INTEGRACIÓN DEL VALOR</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_12"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
         <a href="#seccion-13">XIII.- AUTORIZACIÓN</a>
     </nav>
+</form>
 
     <div id="opcion">
         <div id="opciones-extras">
@@ -42,7 +47,9 @@
                        
                 <?php endif; ?>
                 <a id="lnkGuardarCedulaAdministrador" href="#" class="guardar"><img src="/imagenes/guardar.png" width="30" height="30"></a>
-                <a id="lnkImprimirCedulaAdministrador" href="#" class="imprimir"><img src="/imagenes/imprimir.png" width="30" height="30"></a>               <?php if($deshabilitar == 1) : ?>
+                <a id="lnkImprimirCedulaAdministrador" href="#" class="imprimir"><img src="/imagenes/imprimir.png" width="30" height="30"></a> 
+                <a id="lnkDesbloquearPuntosCedulaAdministrador" href="#" class="desbloquear"><img src="/imagenes/desbloquear.png" width="30" height="30"></a> 
+                <?php if($deshabilitar == 1) : ?>
                      </div>
                 <?php endif; ?>
             </div>

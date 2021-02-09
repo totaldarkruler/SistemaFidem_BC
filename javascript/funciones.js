@@ -997,6 +997,11 @@ $(function() {
         e.preventDefault();
     });
 
+    $("#lnkDesbloquearPuntosCedulaAdministrador").click(function(e){
+        $("#forma-desbloquear-puntos").submit();
+        e.preventDefault();
+    });
+
     $("#lnkNuevoCostoProyecto").click(function(e){
         $("#transparencia").fadeIn(function(){
 

@@ -131,7 +131,7 @@
                         <td><?php echo $usuario->usuario; ?></td>
                         <td>
                             <a href="/usuarios/editar/<?php echo $usuario->id ?>">Editar</a>
-                            <a href="/usuarios/eliminar/<?php echo $usuario->id ?>" onclick="return confirm('Esta usted seguro de eliminar el usuario seleccionado?');">Eliminar</a>                            
+                            <!-- <a href="/usuarios/eliminar/<?php echo $usuario->id ?>" onclick="return confirm('Esta usted seguro de eliminar el usuario seleccionado?');">Eliminar</a>                             -->
                         </td>
                     </tr>
                     <?php endforeach; ?>

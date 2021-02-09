@@ -98,7 +98,7 @@ class Proyecto extends CI_Controller {
         $this->email->initialize($config);
 
         $this->email->from('notificaciones@sistemafidem.org.mx', 'Notificaciones');
-        $this->email->to('lsc.tanyamtz@hotmail.com',$correo);  
+        $this->email->to('jacerda9@hotmail.com',$correo);  
 
         $this->email->subject($titulo);
     

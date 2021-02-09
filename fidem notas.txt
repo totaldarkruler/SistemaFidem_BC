@@ -70,3 +70,5 @@ pdf muy pesado pendiente no se puede reproducir
 imprime hojas ne blanco esto es por los saltos de lineas revisar si con las clases page-break after o before se puede resolver
 
 para resolver issue de headers sent en hostgator se necesita agregar al phpini del server la sig config output_buffering = on
+session.auto_start=1
+output_buffering = on

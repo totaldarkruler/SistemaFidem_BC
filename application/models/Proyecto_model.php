@@ -393,6 +393,10 @@ AND e.id_evaluador=" . $this->session->userdata('id') . " GROUP BY ep.id order b
         return $editado;
 
     }
+    
+    function desbloquear_puntos_proyecto_administrador($datos){
+        echo $datos;
+    }
 
 
     function buscar_proyecto($datos)

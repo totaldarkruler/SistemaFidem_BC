@@ -50,6 +50,18 @@ class Cedula_administrador extends CI_Controller {
             $this->session->set_flashdata('error', 'Error al modificar el proyecto');
         redirect(base_url() . "cedula_administrador/mostrar/" . $_POST["id"]);
     }
+
+    public function desbloquear()
+    {
+        echo 'wtf';
+        $this->load->model('proyecto_model');
+        if ($this->proyecto_model->desbloquear_puntos_proyecto_administrador($_POST))
+            $this->session->set_flashdata('mensaje', 'Puntos han sido desbloqueados');
+        else
+            $this->session->set_flashdata('error', 'Error al desbloquear puntos');
+        redirect(base_url() . "cedula_administrador/mostrar/" . $_POST["id"]);
+    }
+
     public function eliminar_proyecto($proyecto_id, $url)
     {
         $this->load->model('proyecto_model');
