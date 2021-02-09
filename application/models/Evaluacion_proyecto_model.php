@@ -36,7 +36,56 @@ class Evaluacion_proyecto_model extends CI_Model
     
      function obtenerEvaluadoresProyecto($proyecto_id)
     {
-        $query = "select 
+        // $query = "select 
+        //             e.id_evaluador, 
+        //             SUM(r.valor) as resultado,
+        //             ep.id as evaluador_proyecto_id,
+        //             es.estatus,
+        //             ep.*, 
+        //             u.* 
+        //         from 
+        //             usuario u,
+        //             evaluadores_proyecto ep, 
+        //             evaluaciones e, 
+        //             respuestas r,
+        //             estatus es
+        //         WHERE 1=1 
+        //         	and ep.estatus_evaluacion=es.id
+        //             and ep.id_evaluador = u.id
+        //             and e.id_respuesta=r.id 
+        //             and ep.id_proyecto=e.id_proyecto 
+        //             and ep.id_evaluador=e.id_evaluador 
+        //             and ep.estatus_evaluacion=7 
+        //             and ep.id_proyecto=" . $proyecto_id . "
+        //         GROUP BY e.id_evaluador, ep.id, ep.fecha_fin_evaluacion desc              
+
+        //         union
+
+        //         select 
+        //             e.id_evaluador, 
+        //             0 as resultado,
+        //             ep.id as evaluador_proyecto_id,
+        //             es.estatus,
+        //             ep.*, 
+        //             u.* 
+        //         from 
+        //             usuario u,
+        //             evaluadores_proyecto ep, 
+        //             evaluaciones e, 
+        //             respuestas r,
+        //             estatus es
+        //         WHERE 1=1 
+        //         	and ep.estatus_evaluacion=es.id
+        //             and ep.id_evaluador = u.id
+        //             and e.id_respuesta=r.id 
+        //             and ep.id_proyecto=e.id_proyecto 
+        //             and ep.id_evaluador=e.id_evaluador 
+        //             and ep.estatus_evaluacion not in (7,8) 
+        //             and ep.id_proyecto=" . $proyecto_id . "
+        //        GROUP BY e.id_evaluador, ep.id, ep.fecha_fin_evaluacion desc";
+        //QUERY ESTABA MAL PARA TRAER LOS QUE NO HAN EVALUADO NO TIENEN RESPUESTA Y NO FUNCIONA EL JOIN DEL 2DO QUERY EN LA UNION
+
+    $query = "select 
                     e.id_evaluador, 
                     SUM(r.valor) as resultado,
                     ep.id as evaluador_proyecto_id,
@@ -72,18 +121,15 @@ class Evaluacion_proyecto_model extends CI_Model
                     usuario u,
                     evaluadores_proyecto ep, 
                     evaluaciones e, 
-                    respuestas r,
                     estatus es
                 WHERE 1=1 
                 	and ep.estatus_evaluacion=es.id
                     and ep.id_evaluador = u.id
-                    and e.id_respuesta=r.id 
                     and ep.id_proyecto=e.id_proyecto 
                     and ep.id_evaluador=e.id_evaluador 
                     and ep.estatus_evaluacion not in (7,8) 
                     and ep.id_proyecto=" . $proyecto_id . "
                GROUP BY e.id_evaluador, ep.id, ep.fecha_fin_evaluacion desc";
-        
 
         return $this->db->query($query);
      

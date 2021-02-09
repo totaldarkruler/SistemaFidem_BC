@@ -909,9 +909,19 @@ $(function() {
         var date1 = new Date(fecha_inicio);
         var date2 = new Date(fecha_fin);
 
+        var fecha_inicio_primerdia_mes=new Date(date1.getFullYear(),date1.getMonth(),1);
+        var fecha_fin_primerdia_mes=new Date(date2.getFullYear(),date2.getMonth(),0);
+        console.log('fecha inicio nueva= '+ fecha_inicio_primerdia_mes);
+        console.log('fecha inicio nueva= '+ fecha_fin_primerdia_mes);
+
+
         // We use the getTime() method and get the unixtime (in milliseconds, but we want seconds, therefore we divide it through 1000)
-        var date1_unixtime = parseInt(date1.getTime() / 1000);
-        var date2_unixtime = parseInt(date2.getTime() / 1000);
+        // var date1_unixtime = parseInt(date1.getTime() / 1000);
+        // var date2_unixtime = parseInt(date2.getTime() / 1000);
+        //jacp calcular fechas con inicios de mes para mostrar solo mes
+
+        var date1_unixtime = parseInt(fecha_inicio_primerdia_mes.getTime() / 1000);
+        var date2_unixtime = parseInt(fecha_fin_primerdia_mes.getTime() / 1000);
 
         // This is the calculated difference in seconds
         var timeDifference = date2_unixtime - date1_unixtime;
@@ -921,9 +931,23 @@ $(function() {
 
         // and finaly, in days :)
         var timeDifferenceInDays = timeDifferenceInHours  / 24;
-        $("#txtPeriodoDias").val(timeDifferenceInDays + " dias");
+        //var timeDifferenceinMonths = timeDifferenceInDays/30;
+       // var wholeNumber = up(timeDifferenceinMonths,0);
+
+        var monthDifference =  moment(new Date(fecha_fin_primerdia_mes)).diff(new Date(fecha_inicio_primerdia_mes), 'months', true);
+       
+        if(!isNaN(monthDifference)){
+        var wholeNumber = up(monthDifference,0);
+        
+        var txtmeses= (wholeNumber < 2) ? 'mes' : 'meses';
+        $("#txtPeriodoDias").val(wholeNumber + ' ' +  txtmeses );
+        }
+        // $("#txtPeriodoDias").val(timeDifferenceInDays + " dias");
     });
-    
+
+    function up(v, n) {
+        return Math.ceil(v * Math.pow(10, n)) / Math.pow(10, n);
+    }
     
     $("#frmEvaluacionAgregarEvaluador").submit(function(e){
         var iIndice = $("#frmEvaluacionAgregarEvaluador select[name=evaluador_id] option:selected").index();
@@ -1001,7 +1025,6 @@ $(function() {
         $("#forma-desbloquear-puntos").submit();
         e.preventDefault();
     });
-
     $("#lnkNuevoCostoProyecto").click(function(e){
         $("#transparencia").fadeIn(function(){
 
@@ -1329,16 +1352,24 @@ $(function() {
 
 
     });
+
+
+    $("#btnGuardarCedula").click(function(e){
+        $("#boton_anexo_clicado").val("1");
+        $("#forma-cedula").submit();
+    });
     
     
     /* evaluacion proyecto */
     $("#lnkGuardarEvaluacionProyecto").click(function(e){
         var iProyectoID = $("#frmEvaluacionProyecto input[name='proyecto_id']").val();
         var iEvaluadorID = $("#frmEvaluacionProyecto input[name='evaluador_id']").val();
+        var iEvaluadorProyectoID = $("#frmEvaluacionProyecto input[name='evaluador_proyecto_id']").val();
         
         $("#frmEvaluacionProyecto input[type=hidden]").remove();
          $("#frmEvaluacionProyecto").append("<input type='hidden' name='proyecto_id' value='" + iProyectoID + "'>");
          $("#frmEvaluacionProyecto").append("<input type='hidden' name='evaluador_id' value='" + iEvaluadorID + "'>");
+         $("#frmEvaluacionProyecto").append("<input type='hidden' name='evaluador_proyecto_id' value='" + iEvaluadorProyectoID + "'>");
         $( ".contenido-pregunta input:checked" ).each(function(){
             $("#frmEvaluacionProyecto").append("<input type='hidden' name='respuesta_id[]' value='" + $(this).val() + "'>");
             console.log($(this).val() + ";");

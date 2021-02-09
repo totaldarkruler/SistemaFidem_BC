@@ -11,6 +11,7 @@ class Cedula extends CI_Controller {
     public function abrirCedula()
     {
         $data['contenido'] = 'abrir-proyecto';
+        $data['boton_anexo_clicado'] = 0;
         $this->load->view('templete', $data);
     }
 
@@ -60,13 +61,16 @@ class Cedula extends CI_Controller {
             $this->session->set_userdata("administrador","0");
 
             $data['contenido'] = 'cedula';
+            $data['puntos_desbloqueo']=$this->proyecto_model->obtener_puntos_desbloqueados($data['proyecto']->id);
+            $data['boton_anexo_clicado'] = 0;
             $this->load->view('templete', $data);
+           
 
 
         }
         else
         {
-
+            $data['boton_anexo_clicado'] = 0;
             $this->session->set_flashdata('error', 'Por favor revise la información ingresada');
             redirect(base_url() . "cedula");
         }
@@ -111,8 +115,11 @@ class Cedula extends CI_Controller {
         $data['actividades'] = $this->actividad_model->obtener_actividades($data['proyecto']->id);  
         $this->session->set_userdata("administrador","0");
 
+        $data['puntos_desbloqueo']=$this->proyecto_model->obtener_puntos_desbloqueados($data['proyecto']->id);
 
         $data['contenido'] = 'cedula';
+        $data['boton_anexo_clicado'] = 0;
+        
         $this->load->view('templete', $data);
 
     }
@@ -121,6 +128,9 @@ class Cedula extends CI_Controller {
     {
         $this->load->model('proyecto_model');
         $this->proyecto_model->actualizar_proyecto($_POST);
+        if($_POST['boton_anexo_clicado']=="0"){
+        $this->actualizarPuntosDesbloqueados($_POST);
+        }
 
         if ($this->proyecto_model->actualizar_proyecto($_POST))
             $this->session->set_flashdata('mensaje', 'La cedula ha sido modificada');
@@ -128,8 +138,33 @@ class Cedula extends CI_Controller {
             $this->session->set_flashdata('error', 'Error al modificar la cedula');
 
         //$this->mostrar();
+        $data['boton_anexo_clicado'] = 0;
         redirect(base_url() . "cedula/reAbrir/" . $_POST["id"]);
 
+    }
+
+    function actualizarPuntosDesbloqueados($proyecto){
+        if($this->proyecto_model->tiene_puntos_desbloqueados($proyecto['id'])>0){
+
+            $this->proyecto_model->limpiar_puntos_desbloqueados($proyecto['id']);
+            $this->load->model('correo_model');
+            $correo = $this->correo_model->obtener_correo(9);
+    
+            $subject    = @trim(stripslashes("Modificacion de Cedula")); 
+            $message    = @trim(stripslashes("Se realizo modificacion en la cedula '" . $proyecto['folio_proyecto'] . "' .Por favor revise el Sistema de FIDEM.")); 
+            $to         = $correo->correo;
+    
+            $this->load->library('email');
+            $this->email->initialize();
+            $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
+            $this->email->to($to);  
+            $this->email->cc('jacerda9@hotmail.com');
+            $this->email->subject($subject);
+        
+            $this->email->message($message);  
+    
+            $this->email->send();
+            }
     }
 
 
@@ -340,21 +375,40 @@ class Cedula extends CI_Controller {
 
             $this->load->model('institucion_model');
 
-            $name       = @trim(stripslashes("Sistema FIDEM")); 
-            $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
-            $subject    = @trim(stripslashes("Nueva Cedula Recibida")); 
-            $message    = @trim(stripslashes("Existe un nuevo envio de una cedula. Por favor revise el Sistema de FIDEM.")); 
-            $to         = $correo->correo;
+            // $name       = @trim(stripslashes("Sistema FIDEM")); 
+            // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            // $from       = @trim(stripslashes("noreply@cdem.org.mx"));             
+            // $subject    = @trim(stripslashes("Nueva Cedula Recibida")); 
+            // $message    = @trim(stripslashes("Existe un nuevo envio de una cedula. Por favor revise el Sistema de FIDEM.")); 
+            // $to         = $correo->correo;
 
-            $headers = array();
-            $headers .= "MIME-Version: 1.0";
-            $headers .= "Content-type: text/plain; charset=iso-8859-1";
-            $headers .= "From: {$name} <{$from}>";
-            $headers .= "Reply-To: <{$from}>";
-            $headers .= "Subject: {$subject}";
-            $headers .= "X-Mailer: PHP/".phpversion();
+            // $headers = array();
+            // $headers .= "MIME-Version: 1.0";
+            // $headers .= "Content-type: text/plain; charset=iso-8859-1";
+            // $headers .= "From: {$name} <{$from}>";
+            // $headers .= "Reply-To: <{$from}>";
+            // $headers .= "Subject: {$subject}";
+            // $headers .= "X-Mailer: PHP/".phpversion();
 
-            mail($to, $subject, $message, $headers);
+            // mail($to, $subject, $message, $headers);
+             //here
+            //  $this->load->model('correo_model');
+            //  $correo = $this->correo_model->obtener_correo(9);
+     
+             $subject    = @trim(stripslashes("Nueva Cedula Recibida")); 
+             $message    = @trim(stripslashes("Existe un nuevo envio de una cedula. Por favor revise el Sistema de FIDEM.")); 
+             $to         = $correo->correo;
+     
+             $this->load->library('email');
+             $this->email->initialize();
+             $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
+             $this->email->to($to);  
+             $this->email->cc('jacerda9@hotmail.com');
+             $this->email->subject($subject);
+         
+             $this->email->message($message);  
+     
+             $this->email->send();
 
             $this->session->set_flashdata('mensaje', 'La cédula ha sido enviada exitosamente');
         }

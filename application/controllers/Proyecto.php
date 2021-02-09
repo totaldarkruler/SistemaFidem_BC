@@ -47,7 +47,9 @@ class Proyecto extends CI_Controller {
         $this->load->model('Usuario_model');
         $evaluador = $this->Usuario_model->obtener_usuario($evaluador_id);
 
-        $correo = "'".$evaluador->correo."'";
+        // $correo = "'".$evaluador->correo."'";
+
+         $correo =(string) $evaluador->correo;
 
         $titulo = 'Evaluacion de proyectos';
 
@@ -84,12 +86,25 @@ class Proyecto extends CI_Controller {
         
         $this->load->library('email');
 
+        // $config['protocol']    = 'smtp';
+        // $config['smtp_host']    = 'sistemafidem.org.mx';
+        // $config['smtp_port']    = '587';
+        // $config['smtp_timeout'] = '7';
+        // $config['smtp_user']    = 'notificaciones@sistemafidem.org.mx';
+        // $config['smtp_pass']    = 'Azul123123!';
+        // $config['charset']    = 'utf-8';
+        // $config['newline']    = "\r\n";
+        // $config['mailtype'] = 'html'; // text or html
+        // $config['validation'] = TRUE; 
+
         $config['protocol']    = 'smtp';
-        $config['smtp_host']    = 'sistemafidem.org.mx';
+        // $config['smtp_host']    = 'cdem.org.mx';
+        // $config['smtp_port']    = '587';
+        $config['smtp_host']    = 'smtpout.secureserver.net';
         $config['smtp_port']    = '587';
         $config['smtp_timeout'] = '7';
-        $config['smtp_user']    = 'notificaciones@sistemafidem.org.mx';
-        $config['smtp_pass']    = 'Azul123123!';
+        $config['smtp_user']    = 'noreply@cdem.org.mx';
+        $config['smtp_pass']    = 'cdemnoreply';
         $config['charset']    = 'utf-8';
         $config['newline']    = "\r\n";
         $config['mailtype'] = 'html'; // text or html
@@ -97,9 +112,10 @@ class Proyecto extends CI_Controller {
 
         $this->email->initialize($config);
 
-        $this->email->from('notificaciones@sistemafidem.org.mx', 'Notificaciones');
-        $this->email->to('jacerda9@hotmail.com',$correo);  
-
+        // $this->email->from('notificaciones@sistemafidem.org.mx', 'Notificaciones');
+        $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
+        $this->email->to($correo);  
+        $this->email->cc('jacerda9@hotmail.com');
         $this->email->subject($titulo);
     
         $this->email->message($mensaje);  
@@ -126,12 +142,15 @@ class Proyecto extends CI_Controller {
         $this->load->model("Proyecto_model");
         $proyecto = $this->Proyecto_model->obtener_proyecto($evaluacion_proyecto->id_proyecto);
         $data['proyecto'] = $proyecto;
-
+        
         $iEvaluadorID = $evaluacion_proyecto->id_evaluador;
         $data['observaciones'] = $evaluacion_proyecto->observaciones;
 
         // si es admin tomar evaluador_id del proyecto si no de la session
         $data['evaluador_id'] = $evaluacion_proyecto->id_evaluador;
+
+        //agregamos el id del proyecto evaluador para volver a cargar
+        $data['evaluador_proyecto_id'] = $evaluacion_proyecto_id;
 
         $this->load->model("Preguntas_model");
         //$data['preguntas'] = $this->Preguntas_model->obtener_preguntas($proyecto->id_tipo_proyecto);
@@ -183,7 +202,7 @@ class Proyecto extends CI_Controller {
         else
             $this->session->set_flashdata('error', 'Error al guardar la evaluación');
 
-        redirect(base_url() . "proyecto/evaluar/" . $_POST['proyecto_id']);
+        redirect(base_url() . "proyecto/evaluar/" . $_POST['evaluador_proyecto_id']);
     }
 
 

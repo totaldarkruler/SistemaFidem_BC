@@ -38,21 +38,32 @@ class Terminos_referencia extends CI_Controller {
             $correo = $this->correo_model->obtener_correo(8);
 
             $name       = @trim(stripslashes("Sistema FIDEM")); 
-            $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            $from       = @trim(stripslashes("noreply@cdem.org.mx"));             
             $subject    = @trim(stripslashes("Nuevo Registro de los Terminos de Referencia")); 
             $message    = @trim(stripslashes("La informacion para ingresar a su cedula es la siguiente: Folio:" . $data['proyecto']->folio . ", Password:" . $data['proyecto']->clave)); 
             $to         = $data['proyecto']->correo;
 
-            $headers = array();
-            $headers = "MIME-Version: 1.0";
-            $headers .= "Content-type: text/plain; charset=iso-8859-1";
-            $headers .= "From: {$name} <{$from}>";
-            $headers .= "Reply-To: <{$from}>";
-            $headers .= "Subject: {$subject}";
-            $headers .= "X-Mailer: PHP/".phpversion();
+            // $headers = array();
+            // $headers = "MIME-Version: 1.0";
+            // $headers .= "Content-type: text/plain; charset=iso-8859-1";
+            // $headers .= "From: {$name} <{$from}>";
+            // $headers .= "Reply-To: <{$from}>";ee
+            // $headers .= "Subject: {$subject}";
+            // $headers .= "X-Mailer: PHP/".phpversion();
 
-            mail($to, $subject, $message, $headers);
+            // mail($to, $subject, $message, $headers);
             $data['contenido'] = 'mensaje-confirmacion-termino-referencia';
+
+            $this->load->library('email');
+            $this->email->initialize();
+            $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
+            $this->email->to($to);  
+            $this->email->cc('jacerda9@hotmail.com');
+            $this->email->subject($subject);
+            $this->email->message($message);  
+            $this->email->send();
+
             $this->load->view('templete', $data);
             
         }

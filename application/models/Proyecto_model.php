@@ -13,6 +13,9 @@ class Proyecto_model extends CI_Model
     
     function obtener_proyectos_evaluar()
     {  
+
+        $sesssion=$this->session;
+        $userid=$this->session->userdata('id') ;
         $query = "SELECT evaluadores_proyecto.id as proyecto_evaluador_id, proyecto.* FROM evaluadores_proyecto, proyecto where evaluadores_proyecto.id_evaluador=" . $this->session->userdata('id') . " and evaluadores_proyecto.estatus_evaluacion=6 and evaluadores_proyecto.id_proyecto=proyecto.id";
 
         if ($this->db->query($query)->num_rows() > 0)
@@ -167,8 +170,11 @@ AND e.id_evaluador=" . $this->session->userdata('id') . " GROUP BY ep.id order b
         // agregar el archivo del termino de referencia
         // agregar el documento de termino de referencia 
         $uploaddir = $_SERVER['DOCUMENT_ROOT'] . '/DOCUMENTOS/TERMINOS_REFERENCIA/';
+        // $uploaddir = __DIR__ . '/DOCUMENTOS/TERMINOS_REFERENCIA/';
         $uploadfile = $uploaddir . $_FILES['archivo']['name'];
-
+        
+        // if (move_uploaded_file($_FILES['archivo']['tmp_name'], $uploadfile)) 
+        // if (move_uploaded_file($_FILES['archivo']['name'], $uploadfile))
         if (move_uploaded_file($_FILES['archivo']['tmp_name'], $uploadfile)) 
         {
             $documento_sistema = array(
@@ -298,44 +304,46 @@ AND e.id_evaluador=" . $this->session->userdata('id') . " GROUP BY ep.id order b
         );
         $this->db->where($condiciones)->update('actividad_titulo', $actividad_titulo);
 
+        if ($_FILES['archivo_tipo_estudio']!=null){
+            // guardar el anexo nuevo de tipo de estudio
+            $uploaddir = $_SERVER['DOCUMENT_ROOT'] . '/DOCUMENTOS/TIPOS_ESTUDIO/';
+            $uploadfile = $uploaddir . $_FILES['archivo_tipo_estudio']['name'];
 
-        // guardar el anexo nuevo de tipo de estudio
-        $uploaddir = $_SERVER['DOCUMENT_ROOT'] . '/DOCUMENTOS/TIPOS_ESTUDIO/';
-        $uploadfile = $uploaddir . $_FILES['archivo_tipo_estudio']['name'];
-
-        if ($_FILES['archivo_tipo_estudio']['name'] != null)
-        {
-            if (move_uploaded_file($_FILES['archivo_tipo_estudio']['tmp_name'], $uploadfile)) {
-                {
-                    $proyecto_documento = array(
-                        'id_proyecto' => $datos['id'],
-                        'id_clasificacion' => 6,
-                        'documento' => $_FILES['archivo_tipo_estudio']['name'],
-                        'ruta' => strtoupper('/DOCUMENTOS/TIPOS_ESTUDIO/'),
-                        'fecha' => date('Y-m-d H:i:s'),
-                        'id_tipo_estudio' => $datos['tipo_estudio_id'],
-                        'otro_estudio' => strtoupper($datos['seccion-11-otros'])
-                    );
-
-
-                    // insertar el registro
-                    $this->db->insert('proyecto_documento', $proyecto_documento);
-
-                    if ($this->db->trans_status() === FALSE)
+            if ($_FILES['archivo_tipo_estudio']['name'] != null)
+            {
+                if (move_uploaded_file($_FILES['archivo_tipo_estudio']['tmp_name'], $uploadfile)) {
                     {
-                        $this->db->trans_rollback();
-                        $editado = false;
+                        $proyecto_documento = array(
+                            'id_proyecto' => $datos['id'],
+                            'id_clasificacion' => 6,
+                            'documento' => $_FILES['archivo_tipo_estudio']['name'],
+                            'ruta' => strtoupper('/DOCUMENTOS/TIPOS_ESTUDIO/'),
+                            'fecha' => date('Y-m-d H:i:s'),
+                            'id_tipo_estudio' => $datos['tipo_estudio_id'],
+                            'otro_estudio' => strtoupper($datos['seccion-11-otros'])
+                        );
+
+
+                        // insertar el registro
+                        $this->db->insert('proyecto_documento', $proyecto_documento);
+
+                        if ($this->db->trans_status() === FALSE)
+                        {
+                            $this->db->trans_rollback();
+                            $editado = false;
+                        }
+                        else
+                        {
+                            $this->db->trans_commit();
+                            $editado = true;
+                        }
                     }
-                    else
-                    {
-                        $this->db->trans_commit();
-                        $editado = true;
-                    }
+                } else {
+                    $editado = false;
                 }
-            } else {
-                $editado = false;
             }
         }
+        
         else
         {
             if ($this->db->trans_status() === FALSE)
@@ -348,6 +356,7 @@ AND e.id_evaluador=" . $this->session->userdata('id') . " GROUP BY ep.id order b
                 $this->db->trans_commit();
                 $editado = true;
             }
+        
         }
 
 
@@ -393,11 +402,161 @@ AND e.id_evaluador=" . $this->session->userdata('id') . " GROUP BY ep.id order b
         return $editado;
 
     }
-    
-    function desbloquear_puntos_proyecto_administrador($datos){
-        echo $datos;
+
+    function obtener_puntos_desbloqueados($id_proyecto){
+
+        $query = "select * from proyecto_modificacion_puntos pm where pm.id_proyecto=".$id_proyecto;
+        
+        return $this->db->query($query)->row();
+
     }
 
+    function tiene_puntos_desbloqueados($id_proyecto){
+
+        $query = "select * from proyecto_modificacion_puntos pm where pm.id_proyecto=".$id_proyecto;
+        
+        return $this->db->query($query)->num_rows();
+
+    }
+
+    
+    function tiene_punto_12_desbloqueado($id_proyecto){
+
+        $query = "select * from proyecto_modificacion_puntos pm where punto_12=1 and pm.id_proyecto=".$id_proyecto;
+        
+        return $this->db->query($query)->num_rows();
+
+    }
+
+    function limpiar_puntos_desbloqueados($id_proyecto){
+        $this->db->trans_begin();
+        
+        $desbloqueo = array(
+            'modificable' => 0,
+            'punto_3' =>0,
+            'punto_4' =>0,
+            'punto_5' =>0,
+            'punto_7' =>0,
+            'punto_8' =>0,
+            'punto_9' =>0,
+            'punto_10' =>0,
+            'punto_11' =>0,
+            'punto_12' =>0,
+        );
+
+        $condiciones = array(
+            'id_proyecto' => $id_proyecto
+        );
+        
+        $this->db->where($condiciones)->update('proyecto_modificacion_puntos', $desbloqueo);
+
+
+    }
+
+    function desbloquear_puntos_proyecto_administrador($datos){
+        
+        $this->db->trans_begin();
+
+        $query = "select * from proyecto_modificacion_puntos pm where pm.id_proyecto=".$datos['proyecto_id'];
+        $resultado=$this->db->query($query)->row();
+
+        if (@$datos['punto_3'] != null){
+            $punto_3= true;
+        }else{
+            $punto_3= false;
+        }
+
+        if (@$datos['punto_4'] != null){
+            $punto_4= true;
+        }
+        else{
+            $punto_4= false;
+        }
+        if (@$datos['punto_5'] != null){
+            $punto_5= true;
+        }
+        else{
+            $punto_5= false;
+        }
+
+        if (@$datos['punto_7'] != null){
+            $punto_7= true;
+        }else{
+            $punto_7= false;
+        }
+        
+        if (@$datos['punto_8'] != null){
+            $punto_8= true;
+        }else{
+            $punto_8= false;
+        }
+        
+        if (@$datos['punto_9'] != null){
+            $punto_9= true;
+        }else{
+            $punto_9= false;
+        }
+        
+        if (@$datos['punto_10'] != null){
+            $punto_10= true;
+        }else{
+            $punto_10= false;
+        }
+        
+        if (@$datos['punto_11'] != null){
+            $punto_11= true;
+        }else{
+            $punto_11= false;
+        }
+        
+        if (@$datos['punto_12'] != null){
+            $punto_12= true;
+        }else{
+            $punto_12= false;
+        }
+        
+        
+        $desbloqueo = array(
+            // 'tabla' => 'PROYECTO',
+            'id_proyecto' => $datos['proyecto_id'],
+            'modificable' => 1,
+            // 'usuario' => $this->session->userdata('id'),
+            'punto_3' =>$punto_3,
+            'punto_4' =>$punto_4,
+            'punto_5' =>$punto_5,
+            'punto_7' =>$punto_7,
+            'punto_8' =>$punto_8,
+            'punto_9' =>$punto_9,
+            'punto_10' =>$punto_10,
+            'punto_11' =>$punto_11,
+            'punto_12' =>$punto_12,
+            'fecha_solicitud' => date('Y-m-d H:i:s'),
+            'version' => 1,
+        );
+
+        if($resultado==null){
+            $this->db->insert("proyecto_modificacion_puntos", $desbloqueo);
+        }else{
+            $condiciones = array(
+                'id_proyecto' => $datos['proyecto_id']
+            );
+            
+            $this->db->where($condiciones)->update('proyecto_modificacion_puntos', $desbloqueo);
+        }
+
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            $agregado = false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            $agregado = true;
+        }
+
+        return $agregado;
+    }
 
     function buscar_proyecto($datos)
     {

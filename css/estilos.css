@@ -290,7 +290,7 @@ div#menu > a.ayuda
 table
 {
     border-collapse: collapse;
-	width=1000px;
+	width:1000px;
 }
 
 table tbody tr td,
@@ -320,7 +320,7 @@ table > thead > tr > th
     background-color: #eee;
     text-align: center;
     font-size: 13px !important;
-	width=1000px;
+	width:1000px;
 }
 
 table > tbody > tr > td
@@ -1060,7 +1060,7 @@ form > input[type=password]
 #submenu-cedula-administrador
 {
     padding-left: 50px;
-    width: 340px;
+    width: 330px;
     margin-right: 20px;
 }
 
@@ -1742,6 +1742,7 @@ th.alinear-derecha
     font-size: 12px;
     text-decoration: none;
 }
+
 #cedula #opciones-extras > #opciones > a.desbloquear
 {
     position: relative;
@@ -1760,6 +1761,7 @@ th.alinear-derecha
 #cedula #forma-desbloquear-puntos{
     display: inline-block;
     margin-top:50px;
+
 }
 
 #cedula .contenedor-submenu-opcion{
@@ -1770,7 +1772,6 @@ th.alinear-derecha
 #cedula .contenedor-desbloquear-opcion{
     display: inline-flex;
 }
-
 #submenu-cedula-administrador .contenedor-submenu-opcion > a
 {
     position: relative;
@@ -1786,19 +1787,23 @@ th.alinear-derecha
 }
 
 #submenu-cedula-administrador .contenedor-desbloquear-opcion{
-    display: inline-flex;
-    color: #616161;
-    background-color: orange;
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    font-weight: normal;
-    text-decoration: none;
-    align-items: center;
-    }
+ display: inline-flex;
+ color: #616161;
+ background-color: orange;
+ margin-bottom: 10px;
+ padding: 8px 10px;
+ font-weight: normal;
+ text-decoration: none;
+ align-items: center;
+ }
 
+#cedula .desbloquear-punto{
+    z-index: 3;
+}
 #cedula #opcion
 {
-    width: 800px !important;
+    min-width:700px !important;
+    width: 700px !important;
 }
 
 #cedula #opciones-extras > #acuse-recibo,
@@ -1920,14 +1925,15 @@ div#documentos-anexos div table
     padding-bottom: 50px;
 }
 
+#reporte .hoja-salto{
+    page-break-after: always;
+}
+
 #reporte .hoja .seccion
 {
     position: relative;
     display: block;
     margin-bottom: 20px;
-    /* jacp */
-    /* page-break-inside: avoid; */
-
 }
 
 #reporte .hoja .seccion > span.numero
@@ -2048,7 +2054,7 @@ div#documentos-anexos div table
 
 #firmas > div > span
 {
-    font-weight: bolder;
+    font-weight: 800;
     text-transform: uppercase;
     border-top: 2px solid #000;
 }
@@ -2433,6 +2439,7 @@ a.guardar
     width: 100%;
     padding: 0;
     resize: none;
+    height: 250px;
 }
 
 div.deshabilitar > a

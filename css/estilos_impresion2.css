@@ -1,0 +1,8 @@
+@media print {
+    html, body {
+       /* border: 1px solid white; */
+       height: 99% !important;
+       page-break-after: avoid !important;
+       page-break-before: avoid !important;
+    }
+}

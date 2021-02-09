@@ -16,7 +16,7 @@ class Solicitud_registro_model extends CI_Model
     function nueva_solicitud_registro($datos)
     {
         $agregado = false;
-
+        // $destination_path = getcwd().DIRECTORY_SEPARATOR;
         $uploaddir = $_SERVER['DOCUMENT_ROOT'] . '/DOCUMENTOS/ACTA_CONSTITUTIVA/';
         $uploadfile = $uploaddir . $_FILES['documento']['name'];
 

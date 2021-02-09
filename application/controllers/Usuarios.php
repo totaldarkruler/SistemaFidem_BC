@@ -25,18 +25,18 @@ class Usuarios extends CI_Controller {
         redirect(base_url() . "panel_control/mostrarMantenimientoUsuarios");
 
     }
+    //JACP QUITAR OPCION ELIMINAR
+    // public function eliminar($id)
+    // {
+    //     $this->load->model('usuario_model');
+    //     if ($this->usuario_model->eliminar_usuario($id))
+    //         $this->session->set_flashdata('mensaje', 'El usuario ha sido eliminado');
+    //     else
+    //         $this->session->set_flashdata('error', 'Error al eliminar el usuario');
 
-    public function eliminar($id)
-    {
-        $this->load->model('usuario_model');
-        if ($this->usuario_model->eliminar_usuario($id))
-            $this->session->set_flashdata('mensaje', 'El usuario ha sido eliminado');
-        else
-            $this->session->set_flashdata('error', 'Error al eliminar el usuario');
+    //     redirect(base_url() . "panel_control/mostrarMantenimientoUsuarios");
 
-        redirect(base_url() . "panel_control/mostrarMantenimientoUsuarios");
-
-    }
+    // }
 
     public function editar($id)
     {

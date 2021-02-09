@@ -27,20 +27,30 @@ class Solicitudes_registro extends CI_Controller {
 
 
             $name       = @trim(stripslashes("Sistema FIDEM")); 
-            $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            $from       = @trim(stripslashes("noreply@cdem.org.mx"));             
             $subject    = @trim(stripslashes("Su solicitud de registro ha sido aprobada")); 
             $message    = @trim(stripslashes("Su institucion " . $solicitante->nombre . " ha sido aprobada")); 
             $to         = $correo->correo . "," . $solicitante->correo;
 
-            $headers = array();
-            $headers .= "MIME-Version: 1.0";
-            $headers .= "Content-type: text/plain; charset=iso-8859-1";
-            $headers .= "From: {$name} <{$from}>";
-            $headers .= "Reply-To: <{$from}>";
-            $headers .= "Subject: {$subject}";
-            $headers .= "X-Mailer: PHP/".phpversion();
+            // $headers = array();
+            // $headers .= "MIME-Version: 1.0";
+            // $headers .= "Content-type: text/plain; charset=iso-8859-1";
+            // $headers .= "From: {$name} <{$from}>";
+            // $headers .= "Reply-To: <{$from}>";
+            // $headers .= "Subject: {$subject}";
+            // $headers .= "X-Mailer: PHP/".phpversion();
 
-            mail($to, $subject, $message, $headers);
+            // mail($to, $subject, $message, $headers);
+
+            $this->load->library('email');
+            $this->email->initialize();
+            $this->email->from($from, $name);
+            $this->email->to($to);  
+            $this->email->subject($subject);
+        
+            $this->email->message($message);  
+            $this->email->send();
 
             $this->session->set_flashdata('mensaje', 'La solicitud de registro ha sido aprobada');
         }
@@ -65,20 +75,29 @@ class Solicitudes_registro extends CI_Controller {
 
 
             $name       = @trim(stripslashes("Sistema FIDEM")); 
-            $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            $from       = @trim(stripslashes("noreply@cdem.org.mx"));             
             $subject    = @trim(stripslashes("Su solicitud de registro ha sido rechazada")); 
             $message    = @trim(stripslashes("Lo sentimos. Su institucion " . $solicitante->nombre . " ha sido rechazada")); 
             $to         = $correo->correo . "," . $solicitante->correo;
 
-            $headers = array();
-            $headers .= "MIME-Version: 1.0";
-            $headers .= "Content-type: text/plain; charset=iso-8859-1";
-            $headers .= "From: {$name} <{$from}>";
-            $headers .= "Reply-To: <{$from}>";
-            $headers .= "Subject: {$subject}";
-            $headers .= "X-Mailer: PHP/".phpversion();
+            // $headers = array();
+            // $headers .= "MIME-Version: 1.0";
+            // $headers .= "Content-type: text/plain; charset=iso-8859-1";
+            // $headers .= "From: {$name} <{$from}>";
+            // $headers .= "Reply-To: <{$from}>";
+            // $headers .= "Subject: {$subject}";
+            // $headers .= "X-Mailer: PHP/".phpversion();
 
-            mail($to, $subject, $message, $headers);
+            // mail($to, $subject, $message, $headers);
+            $this->load->library('email');
+            $this->email->initialize();
+            $this->email->from($from, $name);
+            $this->email->to($to);  
+            $this->email->subject($subject);
+        
+            $this->email->message($message); 
+            $this->email->send() ;
 
             $this->session->set_flashdata('mensaje', 'La solicitud de registro ha sido rechazada');
         }

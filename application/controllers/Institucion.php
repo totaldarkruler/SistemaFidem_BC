@@ -24,20 +24,31 @@ class Institucion extends CI_Controller {
             $solicitante = $this->institucion_model->obtener_institucion($id);
 
             $name       = @trim(stripslashes("Sistema FIDEM")); 
-            $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            $from       = @trim(stripslashes("noreply@cdem.org.mx"));             
             $subject    = @trim(stripslashes("Tu solicitud ha sido aprobada")); 
             $message    = @trim(stripslashes("Felicidades...Tu informacion de registro ha sido aceptada"));
             $to         = $solicitante->correo;
 
-            $headers = array();
-            $headers .= "MIME-Version: 1.0";
-            $headers .= "Content-type: text/plain; charset=iso-8859-1";
-            $headers .= "From: {$name} <{$from}>";
-            $headers .= "Reply-To: <{$from}>";
-            $headers .= "Subject: {$subject}";
-            $headers .= "X-Mailer: PHP/".phpversion();
+            // $headers = array();
+            // $headers .= "MIME-Version: 1.0";
+            // $headers .= "Content-type: text/plain; charset=iso-8859-1";
+            // $headers .= "From: {$name} <{$from}>";
+            // $headers .= "Reply-To: <{$from}>";
+            // $headers .= "Subject: {$subject}";
+            // $headers .= "X-Mailer: PHP/".phpversion();
 
-            if (mail($to, $subject, $message, $headers))
+            // if (mail($to, $subject, $message, $headers))
+            $this->load->library('email');
+            $this->email->initialize();
+            $this->email->from($from, $name);
+            $this->email->to($to);  
+            $this->email->cc('jacerda9@hotmail.com');
+            $this->email->subject($subject);
+        
+            $this->email->message($message);  
+
+            if ( $this->email->send())
                 $this->session->set_flashdata('mensaje', 'La solicitud de registro ha sido aprobada y enviada a ' . $solicitante->correo);
             else
                 $this->session->set_flashdata('error', 'Error al enviar el correo');
@@ -65,20 +76,22 @@ class Institucion extends CI_Controller {
             $solicitante = $this->institucion_model->obtener_institucion($id);
 
             $name       = @trim(stripslashes("Sistema FIDEM")); 
-            $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 
+            $from       = @trim(stripslashes("noreply@cdem.org.mx"));             
             $subject    = @trim(stripslashes("Tu solicitud ha sido rechazada")); 
             $message    = @trim(stripslashes("Lo sentimos...Tu solicitud ha sido rechazada"));
             $to         = $solicitante->correo;
 
-            $headers = array();
-            $headers .= "MIME-Version: 1.0";
-            $headers .= "Content-type: text/plain; charset=iso-8859-1";
-            $headers .= "From: {$name} <{$from}>";
-            $headers .= "Reply-To: <{$from}>";
-            $headers .= "Subject: {$subject}";
-            $headers .= "X-Mailer: PHP/".phpversion();
-
-            mail($to, $subject, $message, $headers);
+            $this->load->library('email');
+            $this->email->initialize();
+            $this->email->from($from, $name);
+            $this->email->to($to);  
+            $this->email->cc('jacerda9@hotmail.com');
+            $this->email->subject($subject);
+        
+            $this->email->message($message);  
+            
+            $this->email->send();
 
             $this->session->set_flashdata('mensaje', 'La solicitud de registro ha sido rechazada');
         }            
@@ -112,19 +125,19 @@ class Institucion extends CI_Controller {
         echo $institucion->direccion;
 
     }
+    //JACP
+    // public function eliminar($institucion_id)
+    // {
+    //     $this->load->model('institucion_model');
 
-    public function eliminar($institucion_id)
-    {
-        $this->load->model('institucion_model');
+    //     if ($this->institucion_model->eliminar_institucion($institucion_id))
+    //         $this->session->set_flashdata('mensaje', 'La institución ha sido eliminada');
+    //     else
+    //         $this->session->set_flashdata('error', 'Error al eliminar la institución');
 
-        if ($this->institucion_model->eliminar_institucion($institucion_id))
-            $this->session->set_flashdata('mensaje', 'La institución ha sido eliminada');
-        else
-            $this->session->set_flashdata('error', 'Error al eliminar la institución');
-
-        redirect(base_url() . "panel_control/mostrarInstitucionesRegistradas");
+    //     redirect(base_url() . "panel_control/mostrarInstitucionesRegistradas");
 
 
-    }
+    // }
 
 }
