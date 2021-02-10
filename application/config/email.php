@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         // $config['smtp_host']    = 'cdem.org.mx';
         // $config['smtp_port']    = '587';
         $config['smtp_host']    = 'smtpout.secureserver.net';
-        $config['smtp_port']    = '587';
+        $config['smtp_port']    = '465';
         $config['smtp_timeout'] = '7';
         $config['smtp_user']    = 'noreply@cdem.org.mx';
         $config['smtp_pass']    = 'cdemnoreply';
