@@ -4,15 +4,15 @@
     </div>
 
     <div>
-        Sistema para la presentación y aprobación de proyectos susceptibles de apoyo por el fidem
+        Sistema para la presentación y aprobación de proyectos susceptibles de apoyo por el fidem 
         <img src="/imagenes/triangulo-morado.png">
     </div>
-
+   
 </div>
 <?php if(@$this->session->flashdata('mensaje')): ?>
 <div id="mensaje-notificador">
     <?php echo $this->session->flashdata('mensaje');
-    $this->session->unset_userdata('mensaje') ?>
+    $this->session->unset_userdata('mensaje') ?> 
 </div> 
 <?php endif; ?>
 
