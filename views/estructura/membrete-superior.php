@@ -20,5 +20,5 @@
 <div id="mensaje-error">
     <?php echo $this->session->flashdata('error');
     $this->session->unset_userdata('error') ?>
-</div> 
+</div>  
 <?php endif; ?>
