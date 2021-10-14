@@ -41,8 +41,8 @@ class Proveedor extends CI_Controller {
             
             $subject    = @trim(stripslashes("Nueva Solicitud de Registro")); 
             $message    = @trim(stripslashes("Existe una nueva solicitud de registro por parte de '" . $data['solicitante']->nombre . "' .Por favor revise el Sistema de FIDEM.")); 
-            $to         = $correo->correo . "," . $data['solicitante']->correo;
-
+            // $to         = $correo->correo . "," . $data['solicitante']->correo;
+            $to         = $correo->correo;
             // $headers = array();
             // $headers .= "MIME-Version: 1.0";
             // $headers .= "Content-type: text/plain; charset=iso-8859-1";
@@ -69,7 +69,7 @@ class Proveedor extends CI_Controller {
             $this->email->initialize();
             $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
             $this->email->to($to);  
-            $this->email->cc('jacerda9@hotmail.com');
+            // $this->email->cc('jacerda9@hotmail.com');
             $this->email->subject($subject);
         
             $this->email->message($message);  

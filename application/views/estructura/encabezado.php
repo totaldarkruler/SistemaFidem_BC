@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <title>FIDEM</title>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="/javascript/funciones.js" type="text/javascript"></script>
+        <script src="/javascript/moment.js" type="text/javascript"></script>
         <script src="/javascript/jquery.formatCurrency-1.4.0.min.js" type="text/javascript"></script>
         
         <!-- <script src="/javascript/currency.js" type="text/javascript"></script> 

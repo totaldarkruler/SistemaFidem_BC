@@ -1,6 +1,6 @@
 
 <div id="transparencia">
-    simon
+    simonaaaa
 </div>
 
 <div id="contenedor-cedula" class="contenido-pagina">
@@ -25,16 +25,16 @@
         <a href="#seccion-0">DOCUMENTOS ADJUNTOS</a> 
         <a href="#seccion-1">I.- REGISTRO DEL PROYECTO</a>
         <a href="#seccion-2">II.- ORGANISMO EJECUTOR DEL PROYECTO</a>
-       <div class="contenedor-submenu-opcion"> <a href="#seccion-3">III.- NOMBRE DEL PROYECTO</a> <div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_3"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-       <div class="contenedor-submenu-opcion"><a href="#seccion-4">IV.- APOYO SOLICITADO FIDEM</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_4"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-5">V.- TIEMPO ESTIMADO</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_5"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+       <div class="contenedor-submenu-opcion"> <a href="#seccion-3">III.- NOMBRE DEL PROYECTO</a> <div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_3" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_3 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+       <div class="contenedor-submenu-opcion"><a href="#seccion-4">IV.- APOYO SOLICITADO FIDEM</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_4" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_4 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-5">V.- TIEMPO ESTIMADO</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_5" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_5 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
         <a href="#seccion-6">VI.- VISTO BUENO</a>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-7">VII.- OBJETIVOS DEL PROYECTO</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_5"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-8">VIII.- ANTECEDENTES</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_8"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-9">IX.- ALCANCE, IMPACTO Y BENF.</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_9"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-10">X.- ACTIVIDADES, INFORMES...</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_10"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-11">XI.- ANEXOS</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_11"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
-        <div class="contenedor-submenu-opcion"><a href="#seccion-12">XII.- INTEGRACIÓN DEL VALOR</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_12"><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-7">VII.- OBJETIVOS DEL PROYECTO</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_7" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_7 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-8">VIII.- ANTECEDENTES</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_8" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_8 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-9">IX.- ALCANCE, IMPACTO Y BENF.</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_9" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_9 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-10">X.- ACTIVIDADES, INFORMES...</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_10" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_10 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-11">XI.- ANEXOS</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_11" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_11 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
+        <div class="contenedor-submenu-opcion"><a href="#seccion-12">XII.- INTEGRACIÓN DEL VALOR</a><div class="contenedor-desbloquear-opcion"><input type="checkbox" name="punto_12" <?php if($puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_12 == 1) : ?>checked<?php endif; ?><?php endif; ?>><img src="/imagenes/desbloquear.png" width="14" height="14"></div></div>
         <a href="#seccion-13">XIII.- AUTORIZACIÓN</a>
     </nav>
 </form>
@@ -66,7 +66,7 @@
             <input type="hidden" name="proyecto_id" value="<?php echo $proyecto->id; ?>">
         </form>
 
-
+                <!-- <?php echo $proyecto->folio; ?> -->
         <div id="informacion-folio-cedula">
             <span>Folio Organismo Intermedio</span>
             <span><?php echo $proyecto->folio; ?></span>

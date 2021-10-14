@@ -97,11 +97,11 @@ class Proyecto extends CI_Controller {
         // $config['mailtype'] = 'html'; // text or html
         // $config['validation'] = TRUE; 
 
-        $config['protocol']    = 'smtp';
+        // $config['protocol']    = 'smtp';
         // $config['smtp_host']    = 'cdem.org.mx';
         // $config['smtp_port']    = '587';
         $config['smtp_host']    = 'smtpout.secureserver.net';
-        $config['smtp_port']    = '465';
+        $config['smtp_port']    = '587';
         $config['smtp_timeout'] = '7';
         $config['smtp_user']    = 'noreply@cdem.org.mx';
         $config['smtp_pass']    = 'cdemnoreply';
@@ -115,7 +115,7 @@ class Proyecto extends CI_Controller {
         // $this->email->from('notificaciones@sistemafidem.org.mx', 'Notificaciones');
         $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
         $this->email->to($correo);  
-        $this->email->cc('jacerda9@hotmail.com');
+        // $this->email->cc('jacerda9@hotmail.com');
         $this->email->subject($titulo);
     
         $this->email->message($mensaje);  

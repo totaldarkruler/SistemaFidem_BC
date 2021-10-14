@@ -4,7 +4,7 @@
         
         <p>
         <?php echo $proyecto->proyecto; ?>
-
+        <!-- <?php echo $proyecto->proyecto; ?> -->
         </p>
         
         <br>
@@ -48,7 +48,7 @@
                     <th style='text-align: center;'>ESTATUS</th>
                     <th>COMENTARIOS Y RECOMENDACIONES DEL CEI</th>
                     <th></th>
-                    <th></th>
+                    <!-- <th></th> -->
                 </thead>
                 <tbody>
                 <?php foreach(@$evaluadores_proyecto->result() as $evaluador) : ?>
@@ -59,9 +59,9 @@
                         <td style='text-align: center;'><?php echo $evaluador->estatus; ?></td>
                         <td> 
                             <a href="/Proyecto/evaluar/<?php echo $evaluador->evaluador_proyecto_id . '/1' ?>">Ver</a></td>
-                        <td>
+                        <!-- <td>
                             <a href="/Proyecto/eliminar_evaluador/<?php echo $evaluador->id_proyecto . '/' . $evaluador->id_evaluador; ?>">Eliminar</a>
-                        </td>
+                        </td> -->
                         <td>
                         <a href="/Proyecto/enviar_notificacion_evaluacion/<?php echo $proyecto->id . '/' . $evaluador->id_evaluador; ?>">Enviar Notificación</a>
                         </td>
@@ -84,7 +84,7 @@
                 <input type="hidden" name="proyecto_id" value="<?php echo $proyecto->id; ?>">
                 <div class="input">
                     <label>Comentarios y Recomendaciones del CEI:</label>
-                    <textarea name="comentarios" maxlength="250">
+                    <textarea name="comentarios" maxlength="1000">
                     <?php echo $proyecto->observaciones_evaluacion; ?>
                     </textarea>
                 </div>

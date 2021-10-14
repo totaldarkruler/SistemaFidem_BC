@@ -1,5 +1,5 @@
 <div id="transparencia">
-    transparencia
+    transparenciaaa
 </div>
 
 <?php if($proyecto->fecha_envio_cedula != null) : ?>
@@ -272,7 +272,7 @@
             <input type="hidden" name="folio_proyecto" value="<?php echo $proyecto->folio; ?>">
             <input type="hidden" name="contrasenia" value="<?php echo $proyecto->clave; ?>">
             <input type="hidden" name="justificar_otro_estudio_oculto" id="justificar_otro_estudio_oculto" value="<?php echo $proyecto->justificar_otro_estudio; ?>">
-            
+            <input type="hidden" id="boton_anexo_clicado" name="boton_anexo_clicado" value="<?php echo $boton_anexo_clicado; ?>">
             <!--
 <div class="seccion-formulario">
 <p style="position: relative; display: block; background-color: #cc3333; color: #fff; padding: 10px; height: 80px; ">
@@ -376,7 +376,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-3" class="seccion-cedula">
+            <div id="seccion-3" class="seccion-cedula <?php if( isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_3 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <div class="texto-apartado">
                     <span>APARTADO III.</span> <span>NOMBRE DEL PROYECTO:</span> (Especifique un nombre breve que identifique con precisión el proyecto)
                 </div>
@@ -405,7 +405,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-4" class="seccion-cedula">
+            <div id="seccion-4" class="seccion-cedula <?php if( isset($puntos_desbloqueo) &&$puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_4 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <div class="texto-apartado">
                     <span>APARTADO IV.</span> <span>APOYO SOLICITANTE A FIDEM:</span> (Monto solicitado al FIDEM para el proyecto, cifras en Moneda Nacional)
                 </div>
@@ -429,7 +429,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-5" class="seccion-cedula">
+            <div id="seccion-5" class="seccion-cedula <?php if(isset($puntos_desbloqueo) &&  $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_5 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <div class="texto-apartado">
                     <span>APARTADO V.</span> <span>TIEMPO ESTIMADO PARA LA REALIZACIÓN DEL PROYECTO:</span> (Tiempo en el que se estima concluir el proyecto presentando el informe final)
                 </div>
@@ -464,7 +464,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-6" class="seccion-cedula">
+            <div id="seccion-6" class="seccion-cedula ">
                 <div class="texto-apartado">
                     <span>APARTADO VI.</span> <span>VISTO BUENO PARA LA PRESENTACIÓN DEL PROYECTO:</span> (Uso exclusivo Organismo Intermedio)
                 </div>
@@ -474,7 +474,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
 
             </div>
 
-            <div id="seccion-7" class="seccion-cedula">               
+            <div id="seccion-7" class="seccion-cedula <?php if(isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_7 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">               
                 <span>vii.- objetivos del proyecto</span>
 
                 <div>
@@ -506,7 +506,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-8" class="seccion-cedula">
+            <div id="seccion-8" class="seccion-cedula <?php if(isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_8 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <!--
 <div class="texto-apartado">
 <span>APARTADO VIII.</span> <span>ANTECEDENTES QUE JUSTIFICAN EL PROYECTO</span>
@@ -556,7 +556,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-9" class="seccion-cedula">
+            <div id="seccion-9" class="seccion-cedula <?php if(isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_9 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <!--
 <div class="texto-apartado">
 <span>APARTADO IX.</span> <span>ALCANCE, IMPACTO Y BENEFICIOS ESPERADOS DEL PROYECTO:</span>
@@ -594,7 +594,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-10" class="seccion-cedula">
+            <div id="seccion-10" class="seccion-cedula <?php if(isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_10 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <!--   <div class="texto-apartado">
 <span>APARTADO X.</span> <span>ACTIVIDADES, INFORMES Y ENTREGABLES:</span> 
 </div>
@@ -771,7 +771,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-11" class="seccion-cedula">
+            <div id="seccion-11" class="seccion-cedula <?php if(isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_11 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <div class="texto-apartado">
                     <span>APARTADO XI.</span> <span>ANEXOS:</span> Indica con una X los estudios con los que se cuenta para justificar la viabilidad del proyecto
                 </div>
@@ -795,7 +795,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                                                     <?php echo $tipo_estudio->tipo; ?>
                                                 </option>
                                             <?php else:?>
-                                                <option value="<?php echo $tipo_estudio->id; ?>" <?php if ($proyecto->no_requiere_estudio == 1) echo "selected"; ?>>
+                                                <option value="<?php echo $tipo_estudio->id; ?>" >
                                                     <?php echo $tipo_estudio->tipo; ?>
                                                 </option>
                                             <?php endif;?>
@@ -812,7 +812,8 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                                 <tr>
                                     <td colspan="5">
                                         <span>Justificar porque no requiere estudios:</span>
-                                        <input type="text" id="seccion-11-justificacion" name="seccion-11-justificacion" value="<?php echo $proyecto->justificar_otro_estudio; ?>">
+                                        <!-- <input type="text" id="seccion-11-justificacion" name="seccion-11-justificacion" value="<?php echo $proyecto->justificar_otro_estudio; ?>"> -->
+                                        <textarea rows=5 maxlength="2000" id="seccion-11-justificacion" name="seccion-11-justificacion" ><?php echo $proyecto->justificar_otro_estudio; ?></textarea>
                                     </td>
                                 </tr>
                             </tbody>
@@ -823,7 +824,10 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                         <!--?php if($proyecto->no_requiere_estudio == 1) : ?-->
                         <!--input id="btnGuardarCedula" type="submit" value="Guardar" disabled="disabled"--> 
                         <!--?php else :?-->
-                        <input id="btnGuardarCedula" type="submit" value="Guardar">
+                        <!-- <input id="btnGuardarCedula" type="submit" value="Guardar"> -->
+                        <input id="btnGuardarCedula" type="button"  value="Guardar">
+                        
+                       
                         <!--?php endif; ?-->
                     </div>
 
@@ -857,7 +861,7 @@ Por favor, no ingrese acentos, tildes, comillas en las cajas siguientes, ya que 
                 </div>
             </div>
 
-            <div id="seccion-12" class="seccion-cedula">
+            <div id="seccion-12" class="seccion-cedula <?php if(isset($puntos_desbloqueo) && $puntos_desbloqueo != null) : ?><?php if($puntos_desbloqueo->punto_12 == 1) : ?>desbloquear-punto<?php endif; ?><?php endif; ?>">
                 <!--
 <div class="texto-apartado">
 <span>APARTADO XII.</span> <span>INTEGRACIÓN DEL VALOR ESTIMADO DEL PROYECTO</span> 

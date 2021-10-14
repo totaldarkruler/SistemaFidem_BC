@@ -43,7 +43,7 @@ class Institucion extends CI_Controller {
             $this->email->initialize();
             $this->email->from($from, $name);
             $this->email->to($to);  
-            $this->email->cc('jacerda9@hotmail.com');
+            // $this->email->cc('jacerda9@hotmail.com');
             $this->email->subject($subject);
         
             $this->email->message($message);  
@@ -86,7 +86,7 @@ class Institucion extends CI_Controller {
             $this->email->initialize();
             $this->email->from($from, $name);
             $this->email->to($to);  
-            $this->email->cc('jacerda9@hotmail.com');
+            // $this->email->cc('jacerda9@hotmail.com');
             $this->email->subject($subject);
         
             $this->email->message($message);  

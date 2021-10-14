@@ -16,11 +16,11 @@ class Solicitudes_registro extends CI_Controller {
     public function aprobar($id)
     {
         $this->load->model('solicitud_registro_model');
-
+        $solicitante = $this->solicitud_registro_model->obtener_solicitud_registro($id);
         if ($this->solicitud_registro_model->aprobar_solicitud_registro($id))
         {
             $data['contenido'] = 'mensaje-confirmacion-solicitud';
-            $solicitante = $this->solicitud_registro_model->obtener_solicitud_registro($id);
+            
 
             $this->load->model('correo_model');
             $correo = $this->correo_model->obtener_correo(9);
@@ -72,7 +72,6 @@ class Solicitudes_registro extends CI_Controller {
 
             $this->load->model('correo_model');
             $correo = $this->correo_model->obtener_correo(9);
-
 
             $name       = @trim(stripslashes("Sistema FIDEM")); 
             // $from       = @trim(stripslashes("notificaciones@sistemafidem.org.mx")); 

@@ -69,7 +69,7 @@ class Institucion_model extends CI_Model
             'id' => $institucion_id
         );
         $institucion = array(
-        'id_estatus' => 2
+        'id_estatus' => 1
         );
 
         $this->db->where($condiciones)->update("institucion",$institucion);

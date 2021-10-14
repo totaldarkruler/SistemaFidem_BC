@@ -84,16 +84,14 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => FALSE
 );*/
-// 'username' => 'siste101_fidem',
-// 	'database' => 'siste101_fidem',
-// 	'password' => 'fidem1',
+
 
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'wwjose_siste101_fidem',
-	'database' => 'wwjose_siste101_fidem',
-	'password' => 'siste101_fidem',
+	'username' => 'siste101_fidem',
+	'database' => 'siste101_fidem',
+	'password' => 'fidem1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

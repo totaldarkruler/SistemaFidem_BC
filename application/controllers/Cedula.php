@@ -158,7 +158,7 @@ class Cedula extends CI_Controller {
             $this->email->initialize();
             $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
             $this->email->to($to);  
-            $this->email->cc('jacerda9@hotmail.com');
+            // $this->email->cc('jacerda9@hotmail.com');
             $this->email->subject($subject);
         
             $this->email->message($message);  
@@ -403,7 +403,7 @@ class Cedula extends CI_Controller {
              $this->email->initialize();
              $this->email->from('noreply@cdem.org.mx', 'Notificaciones');
              $this->email->to($to);  
-             $this->email->cc('jacerda9@hotmail.com');
+            //  $this->email->cc('jacerda9@hotmail.com');
              $this->email->subject($subject);
          
              $this->email->message($message);  

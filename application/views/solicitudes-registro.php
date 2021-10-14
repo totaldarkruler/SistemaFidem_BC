@@ -66,7 +66,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (@$solicitudes->num_rows() > 0) : ?>
+                    <?php if (@$solicitudes && @$solicitudes->num_rows() > 0) : ?>
                     <?php foreach ($solicitudes->result() as $solicitud) : ?>
                     <tr>
                         <td class="alinear-centro"><?php echo $solicitud->id; ?></td>

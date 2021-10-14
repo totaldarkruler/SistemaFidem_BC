@@ -80,9 +80,9 @@
                         <td>
                             <a href="/institucion/obtener/<?php echo $institucion->id; ?>">Ver institución</a>
                         </td>
-                         <td>
+                         <!-- <td>
                             <a href="/institucion/eliminar/<?php echo $institucion->id; ?>" onclick="return confirm('Se eliminará esta institución. Continuar?');">Eliminar</a>
-                        </td>
+                        </td> -->
                     </tr>
                     <?php endforeach; ?>
                     <?php endif; ?>

@@ -169,6 +169,8 @@ AND e.id_evaluador=" . $this->session->userdata('id') . " GROUP BY ep.id order b
 
         // agregar el archivo del termino de referencia
         // agregar el documento de termino de referencia 
+        // $wd= getcwd().DIRECTORY_SEPARATOR;
+        // $uploaddir= getcwd().DIRECTORY_SEPARATOR .'/DOCUMENTOS/TERMINOS_REFERENCIA/';
         $uploaddir = $_SERVER['DOCUMENT_ROOT'] . '/DOCUMENTOS/TERMINOS_REFERENCIA/';
         // $uploaddir = __DIR__ . '/DOCUMENTOS/TERMINOS_REFERENCIA/';
         $uploadfile = $uploaddir . $_FILES['archivo']['name'];

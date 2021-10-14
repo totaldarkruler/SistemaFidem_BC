@@ -2,6 +2,7 @@
     <form id="frmEvaluacionProyecto" method="post" action="/proyecto/guardar_evaluacion/">
        <input type="hidden" name="proyecto_id" value="<?php echo $proyecto->id; ?>">
        <input type="hidden" name="evaluador_id" value="<?php echo $evaluador_id; ?>">
+       <input type="hidden" name="evaluador_proyecto_id" value="<?php echo $evaluador_proyecto_id; ?>">
         
     </form>
       
@@ -26,7 +27,9 @@
     
     <div id="informacion-evaluacion">
         <a id="lnkGuardarEvaluacionProyecto" href="#" class="guardar"><img src="/imagenes/guardar.png" width="30" height="30"></a>
-        <p><?php echo $proyecto->proyecto; ?></p>
+        <p>Proyecto: <?php echo $proyecto->proyecto; ?></p>
+        <p>Tipo de Proyecto: <?php echo $proyecto->tipo_proyecto; ?></p>
+        <p>Montoo: <?php echo '$'.number_format($proyecto->apoyo_fidem_solicitado,2,'.',','); ?></p>
     </div>
     
     <div id="preguntas">
@@ -54,12 +57,14 @@
     <div id="finalizar-evaluacion">
           <!--  <form action="/proyecto/finalizar_evaluacion/" method="post"> -->
                 <input type="hidden" name="proyecto_id" value="<?php echo $proyecto->id; ?>">
+                <input type="hidden" name="evaluador_proyecto_id" value="<?php echo $evaluador_proyecto_id; ?>">
                 <label>Comentarios y Recomendaciones del CEI:</label>
-                <textarea id="txtObservaciones" name="observaciones" rows="5" maxlength="255">
-                 <?php echo @$observaciones->observaciones; ?>
+                <textarea id="txtObservaciones" name="observaciones" rows="50" maxlength="2000">
+                  
+                 <?php echo $observaciones; ?>
                 </textarea>
 
-        
+                <!-- <?php echo @$observaciones->observaciones; ?> -->
         <a id="lnkFinalizarEvaluacionProyecto" href="#" class="boton">Finalizar Evaluación</a>
          <!--       <input type="submit" class="boton" value="Finalizar Evaluación" onclick="return confirm('Una vez finalizada la evaluación no se podrá realizar modificaciones. &iquest;Desea continuar?')">
         -->
@@ -75,6 +80,7 @@
  <form id="frmFinalizarProyecto" method="post" action="/proyecto/finalizar_evaluacion/">
        <input type="hidden" name="proyecto_id" value="<?php echo $proyecto->id; ?>">
        <input type="hidden" name="evaluador_id" value="<?php echo $evaluador_id; ?>">
+       <input type="hidden" name="evaluador_proyecto_id" value="<?php echo $evaluador_proyecto_id; ?>">
         
     </form>
 
